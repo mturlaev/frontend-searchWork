@@ -1,0 +1,33 @@
+.mainContainer {
+    display: flex;
+    gap: 20%;
+    margin: auto;
+    color: aliceblue;
+    font-weight: 400;
+    font-size: 15px;
+    width: 60%;
+    margin-top: 2%;
+}
+.mainContainer button {
+    background: white;
+    border-radius: 6px;
+    border: none;
+    padding: 8px;
+    color: #0d3c9c;
+}
+.mainContainer button:hover {
+    background: white;
+    border-radius: 6px;
+    border: none;
+    padding: 8px;
+    color: rgb(3, 155, 155);
+}
+
+.mainContainerLeftBox {
+    text-align: center;
+}
+
+.mainContainerRightBox {
+    text-align: center;
+}
+

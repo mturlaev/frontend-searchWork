@@ -1,0 +1,82 @@
+.popularityVacanciesMain {
+    position: relative;
+    bottom: 30px;
+    background: white;
+    padding: 1.5%;
+    border-radius: 5px;
+}
+
+.popularityVacanciesTittle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+    color: gray;
+    border: none;
+}
+.popularityVacanciesTittle button {
+    border: none;
+    background-color: transparent;
+    color: navy;
+}
+.popularityVacanciesTittle button:hover {
+    border: none;
+    background-color: transparent;
+    color: rgb(0, 0, 204);
+}
+
+hr {
+    color: rgba(128, 128, 128, 0.713);
+}
+
+.popularityVacanciesList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+}
+
+.oneVacancy {
+    width: 30%;
+    padding: 2%;
+    font-size: 20px;
+}
+.oneVacancy img {
+    width: 50px;
+    border-radius: 7px;
+    margin-top: 15%;
+}
+
+.dataTimeVac {
+    color: gray;
+}
+
+.positionVac {
+
+}
+
+.salaryVac {
+
+}
+
+.companyVac {
+    display: flex;
+    gap: 9%;
+}
+
+.companyNameAndCity {
+}
+
+.buttonOtclick button {
+    border: 1px solid navy;
+    border-radius: 5px;
+    color: navy;
+    background: transparent;
+    padding: 1% 4.5%;
+}
+.buttonOtclick button:hover {
+    border: 1px solid navy;
+    border-radius: 5px;
+    color: white;
+    background: navy;
+    padding: 1% 4.5%;
+}
