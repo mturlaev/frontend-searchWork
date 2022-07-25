@@ -1,0 +1,19 @@
+.footerMain{
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+.footerText{
+    color: rgb(50, 50, 50);
+    margin-bottom: 1em;
+    border-bottom: 1px solid grey;
+}
+.footerText a {
+    color: rgb(50, 50, 50);
+    text-decoration: none;
+}
+.footerText :hover{
+border-bottom: 1px solid black;
+}
