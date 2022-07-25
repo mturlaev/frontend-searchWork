@@ -1,0 +1,66 @@
+.headerNavbarMain {
+    display: flex;
+    gap: 3%;
+    width: 100%;
+    height: 70px;
+}
+
+.leftBox-navbarMain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9%;
+    width: 15%;
+    color: white;
+}
+.leftBox-navbarMain button {
+    outline: none;
+    border: 0;
+    background: transparent;
+}
+.leftBox-navbarMain img {
+    margin-bottom: 5px;
+    font-weight: 100;
+}
+
+.mainBox-navbarMain {
+    display: flex;
+    width: 60%;
+    height: 47px;
+    border-radius: 7px;
+    overflow: hidden;
+    margin: auto;
+}
+.mainBox-navbarMain input {
+    width: 100%;
+    border: none;
+}
+.mainBox-navbarMain button {
+    width: 15%;
+    border: none;
+    color: #0d3c9c;
+    background-color: aliceblue;
+}
+.mainBox-navbarMain button:hover {
+    width: 15%;
+    border: none;
+    color: white;
+    background-color: rgba(240, 248, 255, 0.706);
+}
+
+.rightBox-navbarMain {
+    margin: auto;
+    width: 25%;
+}
+.rightBox-navbarMain button {
+    outline: none;
+    border: 0;
+    background: transparent;
+    color: white;
+}
+.rightBox-navbarMain button:hover {
+    outline: none;
+    border: 0;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.276);
+}

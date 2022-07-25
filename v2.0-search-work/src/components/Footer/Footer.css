@@ -2,18 +2,23 @@
     margin-top: 2em;
     display: flex;
     justify-content: space-evenly;
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
+    background-color: gainsboro;
 }
+.footerMain:hover{
+border-bottom: 1px solid black;
+}
+
 .footerText{
     color: rgb(50, 50, 50);
     margin-bottom: 1em;
     border-bottom: 1px solid grey;
 }
+.footerText:hover{
+    color: rgb(50, 50, 50);
+    margin-bottom: 1em;
+    border-bottom: 1px solid black;
+}
 .footerText a {
     color: rgb(50, 50, 50);
     text-decoration: none;
-}
-.footerText :hover{
-border-bottom: 1px solid black;
 }
