@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import axios from "axios";
 import { useState } from 'react';
 import logo from "../../images/logo.svg"
 import { useDispatch } from "react-redux"
