@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import SignUp from "../../RegAuth/SignUp";
+import SignIn from "../../RegAuth/SignIn"
 import "./headerNavbar.css";
 
 function HeaderNavbar() {
@@ -30,8 +32,8 @@ function HeaderNavbar() {
         <button onClick={handleClick}>
           ？
         </button>
-        <button onClick={handleClick}>Вход</button>
-        <button onClick={handleClick}>Регистрация</button>
+        <Link to="/signIn" path={<SignIn/>}>Вход</Link>
+        <Link to="/signUp" path={<SignUp />}>Регистрация</Link>
       </div>
     </div>
     
