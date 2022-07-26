@@ -1,0 +1,68 @@
+.vacanciesAddPageContainer {
+    padding-top: 1%;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/002/256/477/original/stock-and-graph-design-background-business-graph-banner-design-eps10-illustration-free-vector.jpg);
+}
+
+.vacanciesAddPageMain {
+    background-image: url("https://img.freepik.com/free-photo/creative-flat-lay-design-of-workspace-desk-with-laptop-alarm-clock-blank-notebook-smartphone-and-stationery-with-copy-space-background_1150-45600.jpg?w=2000");
+    background-size: cover;
+    margin-top: 1%;
+    display: flex;
+}
+.vacanciesAddPageMain input{
+    width: 70%;
+    height: 50px;
+    border: none;
+    border-radius: 7px;
+}
+
+.vacanciesAddPage-LeftContent {
+    width: 18%;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/002/256/477/original/stock-and-graph-design-background-business-graph-banner-design-eps10-illustration-free-vector.jpg);
+}
+
+.vacanciesAddPage-RightContent {
+    width: 75%;
+    margin: auto;
+}
+
+.vacanciesTittle {
+    display: flex;
+    margin: 5%;
+    width: 75%;
+    justify-content: space-between;
+}
+.vacanciesTittle button {
+    border: none;
+    border-radius: 7px;
+    background-color: rgba(0, 0, 128, 0.699);
+    font-size: 20px;
+    color: aliceblue;
+}
+.vacanciesTittle button:hover {
+    border: none;
+    border-radius: 7px;
+    background-color: rgba(0, 0, 128, 0.509);
+    font-size: 20px;
+    color: aliceblue;
+}
+
+.vacanciesPosition {
+    margin: 5%;
+}
+
+.vacanciesSalary {
+    margin: 5%;
+}
+
+.vacanciesCompany {
+    margin: 5%;
+}
+
+.vacanciesCity {
+    margin: 5%;
+}
+
+.vacanciesText {
+    margin: 5%;
+}
