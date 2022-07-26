@@ -1,7 +1,7 @@
 import React from 'react';
-import App from '../../../../../App';
-import Main from '../../../../main/Main';
-import Navbar from '../../../Navbar';
+import App from '../../../App';
+import Main from '../../main/Main';
+import Navbar from '../../navbar/Navbar';
 
 const HomePage = () => {
     return (
