@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../feauters/userSlice';
 import { Link, useNavigate } from "react-router-dom";
+import "./signInUp.module.css";
 
 
 const SignIn = () => {
 
 const [email, setEmail] = useState("")
 const [password, setPassword]= useState("");
-const token = localStorage.getItem("token")
+const token = localStorage.getItem("token");
 const dispatch = useDispatch();
 const navigate = useNavigate();
+const isActivated = useSelector(state => state.user.isActivated)
 
 const handleSubmit = (e) => {
   e.preventDefault();
@@ -51,6 +53,7 @@ const handleChangePassword = (e) => {
         />
         <button onClick={(e) => handleSubmit(e)}>Войти</button>
       </form>
+      <div>У вас нет аккаунта?<Link to='/signUp'>Зарегистрируйтесь</Link></div>
     </div>
   );
 };
