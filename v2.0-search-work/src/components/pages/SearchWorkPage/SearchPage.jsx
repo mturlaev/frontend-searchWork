@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import HeaderNavbar from "../../navbar/headerNavbar/HeaderNavbar";
 
 const SearchPage = () => {
+
   const vacancy = useSelector((state) => state.search.vacancy);
   const dispatch = useDispatch();
 
