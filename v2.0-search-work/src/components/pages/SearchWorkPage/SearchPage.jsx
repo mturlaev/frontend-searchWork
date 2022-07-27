@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import styles from "./SearchPage.module.css";
+import React from "react";
 
 const SearchPage = () => {
 
