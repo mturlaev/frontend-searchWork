@@ -12,22 +12,17 @@ import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 
 function HeaderNavbar() {
   const vacancy = useSelector((state) => state.search.vacancy);
-  const searchText = useSelector(state => state.search.searchText)
+  const searchText = useSelector((state) => state.search.searchText);
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [text, setText] = useState(searchText ? searchText : "");
-  
-
-  const [vacancySearch, setVacancySearch] = useState({vacancy})
 
   const handlChange = (e) => {
     setText(e.target.value);
-    
-    vacancy.filter(i => i.salary < 1)
   };
 
-  const arr = vacancy.filter((element) => {
+  const arr = vacancy?.filter((element) => {
     return element.name.toLowerCase().includes(text.toLowerCase());
   });
 
@@ -35,33 +30,22 @@ function HeaderNavbar() {
     dispatch(fetchVacancy());
   }, [dispatch]);
 
-  const handleClick = () => {
-
-  };
+  const handleClick = () => {};
 
   const handleSearch = (text) => {
-    // setTextSearch();
-    // setVacancySearch({arr});
-    setText(text)
-    
-    console.log(text)
-    localStorage.setItem('text',text)
-    navigate('/search/vacancy')
+    setText(text);
+
+    navigate("/search/vacancy");
   };
-  console.log(window.location.href);
 
   return (
     <>
       <div className="headerNavbarMain">
         <div className="leftBox-navbarMain">
-          <button>
-            <img
-              src="https://vibromotors.ru/img/mobile-menu-icon.png"
-              alt="anzor"
-              width={"20px"}
-              onClick={handleClick}
-            />
-          </button>
+          
+          <Button>
+          <MenuOutlinedIcon />
+          </Button>
           <h3>
             <Link to="/">Название</Link>
           </h3>
@@ -92,7 +76,6 @@ function HeaderNavbar() {
         <SearchPage arr={arr} />
       )}
     </>
-
   );
 }
 
