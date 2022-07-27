@@ -6,7 +6,7 @@ export const postResume = createAsyncThunk("/resume/post", async (img, thunkAPI)
       const formData = new FormData()
       console.log(img)
       formData.append("img", img)
-      const res = await fetch("/resume", {
+      const res = await fetch("http://localhost:4000/resume", {
         method: "POST",
         body: formData
       });
