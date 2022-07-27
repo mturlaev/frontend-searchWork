@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import SignUp from "../../RegAuth/SignUp";
+import SignIn from "../../RegAuth/SignIn"
 import "./headerNavbar.css";
 import * as React from "react";
 import Button from "@mui/material/Button";
@@ -27,9 +29,13 @@ function HeaderNavbar() {
 
       <div className="rightBox-navbarMain">
         <button onClick={handleClick}>8-800-555-35-35</button>
-        <button onClick={handleClick}>？</button>
-        <button onClick={handleClick}>Вход</button>
-        <button onClick={handleClick}>Регистрация</button>
+
+        <button onClick={handleClick}>
+          ？
+        </button>
+        <Link to="/signIn" path={<SignIn/>}>Вход</Link>
+        <Link to="/signUp" path={<SignUp />}>Регистрация</Link>
+
       </div>
     </div>
   );
