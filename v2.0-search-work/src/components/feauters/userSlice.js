@@ -7,7 +7,8 @@ const initialState = {
   loading: false,
   user: localStorage.getItem("user"),
   token: localStorage.getItem("token"),
-  email: localStorage.getItem("email")
+  email: localStorage.getItem("email"),
+  isActivated: localStorage.getItem("isActivated")
 };
 
 export const registration = createAsyncThunk(
@@ -48,6 +49,7 @@ export const login = createAsyncThunk(
       if (data.error) {
         return thunkAPI.rejectWithValue(data.error);
       } else {
+        localStorage.setItem("isActivated", data?.user?.isActivated)
         localStorage.setItem("token", data.accessToken)
         return thunkAPI.fulfillWithValue(data);
       }
@@ -84,6 +86,7 @@ export const userSlice = createSlice({
       state.signingIn = false;
       state.error = null;
       state.token = action.payload.token;
+      state.isActivated = action.payload.user.isActivated;
       state.user = action.payload.user;
       state.email = action.payload.email;
     })

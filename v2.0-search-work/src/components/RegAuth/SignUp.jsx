@@ -49,6 +49,7 @@ const handleChangePassword = (e) => {
         />
         <button onClick={(e) => handleSubmit(e)}> Зарегистрироваться</button>
       </form>
+      <div>У вас есть аккаунт?<Link to='/signIn'>Войти</Link></div>
     </div>
   );
 };

@@ -6,6 +6,9 @@ import ResumePage from "../pages/ResumePage/ResumePage";
 import SearchPage from "../pages/SearchWorkPage/SearchPage";
 import VacanciesAddPage from "../pages/VacanciesAdd/VacanciesAddPage";
 import VacanciesPage from "../pages/VacanciesPage/VacanciesPage";
+import PreSignIn from "../RegAuth/PreSignIn";
+import SignIn from "../RegAuth/SignIn";
+import SignUp from "../RegAuth/SignUp";
 
 const MainRoute = () => {
   return (
@@ -17,6 +20,9 @@ const MainRoute = () => {
         <Route path="/vacancy" element={<VacanciesAddPage />} />
         <Route path="/catalog/vacancies" element={<VacanciesPage />} />
         <Route path="/" element={<HomePage />} />
+        <Route path="/signIn" element={<SignIn />} />
+        <Route path="/signUp" element={<SignUp />} />
+        <Route path="/preSign" element={<PreSignIn />} />
       </Routes>
     </div>
   );

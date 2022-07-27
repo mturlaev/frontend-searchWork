@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./mainNavbar.css";
 export default function MainNavbar() {
   return (
@@ -8,7 +9,7 @@ export default function MainNavbar() {
           Название - это лучшие предложения высокооплачиваемой работы
           от российских и  зарубежных компаний.
         </p>
-        <button>Разместить резюме</button>
+        <Link to="/resume"><button>Разместить резюме</button></Link>
       </div>
       
       <div className="mainContainerRightBox">
@@ -17,7 +18,7 @@ export default function MainNavbar() {
           Название — самая большая и качественная база резюме лучших
           специалистов в России.
         </p>
-        <button>Разместить вакансию</button>
+        <Link to="/vacancy"><button>Разместить вакансию</button></Link>
       </div>
     </div>
   );

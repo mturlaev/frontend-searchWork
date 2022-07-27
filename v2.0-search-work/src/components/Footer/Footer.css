@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-evenly;
     background-color: gainsboro;
+    
 }
 .footerMain:hover{
 border-bottom: 1px solid black;
