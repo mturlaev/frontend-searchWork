@@ -23,7 +23,8 @@ export const searchVacanciSlice = createSlice ({
     initialState: {
         vacancy: [],
         loading: false,
-        error: null
+        error: null,
+        searchText: localStorage.getItem('text')
     },
     reducers: {},
     extraReducers: (builder) => {
