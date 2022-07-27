@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import HeaderNavbar from "../navbar/headerNavbar/HeaderNavbar";
 import CatalogPage from "../pages/CatalogResumePage/CatalogPage";
 import HomePage from '../pages/HomePage/HomePage'
 import ResumePage from "../pages/ResumePage/ResumePage";
@@ -14,7 +15,7 @@ const MainRoute = () => {
       <Routes>
         <Route path="/catalog/resumes" element={<CatalogPage />} />
         <Route path="/resume" element={<ResumePage />} />
-        <Route path="/search/vacancy" element={<SearchPage />} />
+        <Route path="/search/vacancy" element={<HeaderNavbar />} />
         <Route path="/vacancy" element={<VacanciesAddPage />} />
         <Route path="/catalog/vacancies" element={<VacanciesPage />} />
         <Route path="/" element={<HomePage />} />
