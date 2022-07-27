@@ -18,7 +18,7 @@ function HeaderNavbar() {
           <MenuOutlinedIcon onClick={handleClick} />
         </Button>
         <h3>
-          <Link to="/">Название</Link>
+          <Link to="/">Название</Link> 
         </h3>
       </div>
 
@@ -31,7 +31,7 @@ function HeaderNavbar() {
         <button onClick={handleClick}>8-800-555-35-35</button>
 
         <button onClick={handleClick}>
-          ？
+          
         </button>
         <Link to="/signIn" path={<SignIn/>}>Вход</Link>
         <Link to="/signUp" path={<SignUp />}>Регистрация</Link>
