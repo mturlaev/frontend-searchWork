@@ -3,7 +3,9 @@ import React from 'react';
 const SearchPage = () => {
     return (
         <div>
-            поиск работы
+            поиск работы..
+            <div></div>
+
         </div>
     );
 };
