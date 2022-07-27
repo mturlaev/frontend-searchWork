@@ -1,4 +1,5 @@
 import "./popularityVacancies.css";
+import React from "react";
 
 export default function PopularityVacancies() {
   return (

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { registration } from '../feauters/userSlice';
 import { Link, useNavigate } from "react-router-dom";
-import PreSignIn from './PreSignIn';
+import style from "./signInUp.module.css";
 
 const SignUp = () => {
   const [email, setEmail] = useState("")
@@ -33,23 +33,30 @@ const handleChangePassword = (e) => {
 }
 
   return (
-    <div>
-      <form onSubmit={(e) => handleSubmit(e)}>
+    <div className={style.container}>
+    <div className={style.imgDiv} >
+    </div>
+    <div className={style.signInUp}>
+      <form className={style.authForm} onSubmit={(e) => handleSubmit(e)}>
+      <h3 className={style.auth}>Регистрация</h3>
         <input 
+        className={style.email}
         type="email" 
         value={email} 
         placeholder='Введите логин' 
         onChange={(e) => handleChangeLogin(e)}
         />
         <input 
+        className={style.password}
         type="password" 
         value={password} 
         placeholder="Введите пароль" 
         onChange={(e) => handleChangePassword(e)} 
         />
-        <button onClick={(e) => handleSubmit(e)}> Зарегистрироваться</button>
+        <button className={style.signInUpBtn} onClick={(e) => handleSubmit(e)}>Зарегистрироваться</button>
+      <div div className={style.linkDiv}>У вас есть аккаунт?<Link to='/signIn'>Войти</Link></div>
       </form>
-      <div>У вас есть аккаунт?<Link to='/signIn'>Войти</Link></div>
+    </div>
     </div>
   );
 };

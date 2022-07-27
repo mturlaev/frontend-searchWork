@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { createVacancy } from "../../feauters/searchVacanciSlice";
 import HeaderNavbar from "../../navbar/headerNavbar/HeaderNavbar";
 import "./VacanciesAddPage.css";
+import React from "react";
 
 const VacanciesAddPage = () => {
   const vacancy = useSelector((state) => state.search.vacancy);

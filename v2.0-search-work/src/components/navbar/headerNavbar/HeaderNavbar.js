@@ -9,12 +9,16 @@ import { fetchVacancy } from "../../feauters/searchVacanciSlice";
 import * as React from "react";
 import Button from "@mui/material/Button";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+import { logout } from "../../feauters/userSlice";
+
 
 function HeaderNavbar() {
   const vacancy = useSelector((state) => state.search.vacancy);
   const searchText = useSelector((state) => state.search.searchText);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+
+  const navigate = useNavigate()
+  const token = localStorage.getItem('token')
 
   const [text, setText] = useState(searchText ? searchText : "");
 
@@ -31,6 +35,10 @@ function HeaderNavbar() {
   }, [dispatch]);
 
   const handleClick = () => {};
+
+  const handleLogoutClick = () => {
+    dispatch(logout());
+  }
 
   const handleSearch = (text) => {
     setText(text);
@@ -61,16 +69,24 @@ function HeaderNavbar() {
           <button onClick={() => handleSearch(text)}>Найти</button>
         </div>
 
+
         <div className="rightBox-navbarMain">
           <button onClick={handleClick}>8-800-555-35-35</button>
           <button onClick={handleClick}>？</button>
-          <Link to="/signIn" path={<SignIn />}>
+          {token ? <button onClick={handleLogoutClick}>Выход</button> : <div><Link to="/signIn" path={<SignIn />}>
+            <button>
             Вход
+            </button>
           </Link>
           <Link to="/signUp" path={<SignUp />}>
+            <button>
+
             Регистрация
-          </Link>
+            </button>
+          </Link></div> }
+          
         </div>
+
       </div>
       {window.location.href === "http://localhost:3000/search/vacancy" && (
         <SearchPage arr={arr} />
