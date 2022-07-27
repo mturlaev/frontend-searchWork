@@ -1,4 +1,5 @@
 import "./mainNavbar.css";
+
 export default function MainNavbar() {
   return (
     <div className="mainContainer">

@@ -1,0 +1,84 @@
+/* .headerNavbarMain {
+    display: flex;
+    gap: 3%;
+    width: 100%;
+    height: 70px;
+}
+
+.leftBox_navbarMain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9%;
+    width: 15%;
+    color: white;
+}
+.leftBox_navbarMain button {
+    outline: none;
+    border: 0;
+    background: transparent;
+}
+.leftBox_navbarMain img {
+    margin-bottom: 5px;
+    font-weight: 100;
+}
+
+.mainBox_navbarMain {
+    display: flex;
+    width: 60%;
+    height: 47px;
+    border-radius: 7px;
+    overflow: hidden;
+    margin: auto;
+}
+.mainBox_navbarMain input {
+    width: 100%;
+    border: none;
+}
+.mainBox_navbarMain button {
+    width: 15%;
+    border: none;
+    color: #0d3c9c;
+    background-color: aliceblue;
+}
+.mainBox_navbarMain button:hover {
+    width: 15%;
+    border: none;
+    color: white;
+    background-color: rgba(240, 248, 255, 0.706);
+}
+
+.rightBox_navbarMain {
+    margin: auto;
+    width: 25%;
+}
+.rightBox_navbarMain button {
+    outline: none;
+    border: 0;
+    background: transparent;
+    color: white;
+}
+.rightBox_navbarMain button:hover {
+    outline: none;
+    border: 0;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.276);
+} */
+
+.divHeaderNavbar {
+    background-image: url(https://static.vecteezy.com/system/resources/previews/002/256/477/original/stock-and-graph-design-background-business-graph-banner-design-eps10-illustration-free-vector.jpg);
+    background-size: cover;
+    padding-top: 1%;
+}
+
+.cardListVacancy {
+/* display: flex; */
+    /* width: 30%; */
+    margin: 50px;
+    background: white;
+    padding: 1.5%;
+    border-radius: 5px;
+}
+.vacancyName {
+    
+}
