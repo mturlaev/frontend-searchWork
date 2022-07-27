@@ -1,11 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-export const postResume = createAsyncThunk("/resume/post", async (img, thunkAPI) => {
+export const postResume = createAsyncThunk("/resume/post", async ({img, name}, thunkAPI) => {
   const state = thunkAPI.getState()  
   try {
       const formData = new FormData()
       console.log(img)
       formData.append("img", img)
+      formData.append('name', name)
       const res = await fetch("http://localhost:4000/resume", {
         method: "POST",
         body: formData
