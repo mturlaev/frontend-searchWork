@@ -6,7 +6,7 @@ import SearchPage from "../../pages/SearchWorkPage/SearchPage";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchVacancy } from "../../feauters/searchVacanciSlice";
-import * as React from "react";
+
 
 
 
