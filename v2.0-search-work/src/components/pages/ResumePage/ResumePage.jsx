@@ -8,6 +8,17 @@ import "./ResumePage.css";
 const ResumePage = () => {
   const [img, setImg] = useState(null);
   const [avatar, setAvatar] = useState(null);
+  const [name, setName] = useState("");
+  const [surName, setSurName] = useState("");
+  const [age, setAge] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [city, setCity] = useState("");
+  const [category, setCategory] = useState([]);
+  const [position, setPosition] = useState("");
+  const [experience, setExperience] = useState("");
+  const [education, setEducation] = useState(false)
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -27,9 +38,58 @@ const ResumePage = () => {
     setImg("");
   };
 
+  const handleNameChange = (e) => {
+    setName(e.target.value)
+  };
+
+  const handleSurNameChange = (e) => {
+    setSurName(e.target.value)
+  };
+
+  const handleAgeChange = (e) => {
+    setAge(e.target.value)
+  }
+
+  const handlePhoneChange = (e) => {
+    setPhone(e.target.value)
+  }
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value)
+  }
+
+  const handleCityChange = (e) => {
+    setCity(e.target.value)
+  }
+
+  const handleCategoryChange = (e) => {
+    setCategory(e.target.value)
+  }
+
+  const handlePositionChange = (e) => {
+    setPosition(e.target.value)
+  }
+
+  const handleExperienceChange = (e) => {
+    setExperience(e.target.value)
+  }
+
+
+
+
   return (
     <div className="resumeMain">
       <div className="avatar">
+        <div className="inputsName">
+          <div className="inputText">Имя
+          <input type="text"
+          value={name}
+          onChange={(e) => handleNameChange(e)} /></div>
+          <div className="inputText">Фамилия
+          <input type="text"
+          value={surName}
+          onChange={(e) => handleSurNameChange(e)} /></div>
+        </div>
         {avatar ? (
           <img className="fotografia" src={`${avatar}`} alt="avatar" />
         ) : (
@@ -55,24 +115,42 @@ const ResumePage = () => {
             }
           }}
         />
+      </div>
+      <div className="inputsMain">
+        <div className="inputText">Возраст
+        <input type="text"
+        value={age}
+        onChange={(e) => handleAgeChange(e)} /></div>
+        <div className="inputText">Телефон
+        <input type="text"
+        value={phone}
+        onChange={(e) => handlePhoneChange(e)} /></div>
+        <div className="inputText">Email
+        <input type="text"
+        value={email}
+        onChange={(e) => handleEmailChange(e)} /></div>
+        <div className="inputText">Город
+        <input type="text"
+        value={city}
+        onChange={(e) => handleCityChange(e)} /></div>
+        <div></div>
+        <div className="inputText">Ваш Stack
+        <input type="text"
+        value={category}
+        onChange={(e) => handleCategoryChange(e)} /></div>
+        <div className="inputText">Должность
+        <input type="text"
+        value={position}
+        onChange={(e) => handlePositionChange(e)} /></div>
+        <div className="inputText">Опыт работы
+        <input type="text"
+        value={experience}
+        onChange={(e) => handleExperienceChange(e)} /></div>
+        <div className="inputText">Наличие высшего образования</div>
+      </div>
         <button className="btnFoto" onClick={addFile}>
           Создать резюме
         </button>
-      </div>
-      <div className="inputsMain">
-        <input type="text" placeholder="Имя" />
-        <input type="text" placeholder="Фамилия" />
-        <input type="text" placeholder="Возраст" />
-        <input type="text" placeholder="Имя" />
-        <input type="text" placeholder="Имя" />
-        <input type="text" placeholder="Имя" />
-        <input type="text" placeholder="Имя" />
-        <input type="text" placeholder="Имя" />
-        <input type="text" placeholder="Имя" />
-        <input type="text" placeholder="Имя" />
-        <input type="text" placeholder="Имя" />
-        <input type="text" placeholder="Имя" />
-      </div>
     </div>
   );
 };
