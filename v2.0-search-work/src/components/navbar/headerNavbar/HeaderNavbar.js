@@ -6,7 +6,9 @@ import SearchPage from "../../pages/SearchWorkPage/SearchPage";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchVacancy } from "../../feauters/searchVacanciSlice";
-
+import * as React from "react";
+import Button from "@mui/material/Button";
+import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 
 function HeaderNavbar() {
   const vacancy = useSelector((state) => state.search.vacancy);
@@ -34,7 +36,7 @@ function HeaderNavbar() {
   }, [dispatch]);
 
   const handleClick = () => {
-   
+
   };
 
   const handleSearch = (text) => {
@@ -90,6 +92,7 @@ function HeaderNavbar() {
         <SearchPage arr={arr} />
       )}
     </>
+
   );
 }
 

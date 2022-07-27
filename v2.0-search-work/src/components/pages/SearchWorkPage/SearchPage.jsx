@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 import styles from "./SearchPage.module.css";
 
-
 const SearchPage = () => {
 
   const vacancy = useSelector((state) => state.search.vacancy);

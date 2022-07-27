@@ -1,6 +1,6 @@
+import { Button } from "@mui/material";
 import HeaderNavbar from "../../navbar/headerNavbar/HeaderNavbar";
-import "./VacanciesAddPage.css"
-
+import "./VacanciesAddPage.css";
 
 const VacanciesAddPage = () => {
   return (
@@ -12,7 +12,7 @@ const VacanciesAddPage = () => {
         <div className="vacanciesAddPage-RightContent">
           <div className="vacanciesTittle">
             <h2>Размещение вакансии</h2>
-            <button>Очистить форму</button>
+            <Button variant="contained">Очистить форму</Button>
           </div>
 
           <div className="vacanciesPosition">
@@ -40,7 +40,9 @@ const VacanciesAddPage = () => {
             <input type="text" placeholder="Например: Чисто верстальщик вез" />
           </div>
 
-          <div className=""></div>
+          <div className="btnAddVacancy">
+            <Button variant="contained">Добавить вакансию</Button>
+          </div>
         </div>
       </div>
     </div>
@@ -48,4 +50,3 @@ const VacanciesAddPage = () => {
 };
 
 export default VacanciesAddPage;
-

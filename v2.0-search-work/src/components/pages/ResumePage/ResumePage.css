@@ -6,3 +6,13 @@
     width: 70px;
     height: 70px;
 }
+.inputText{
+    display: flex;
+    flex-direction:column;
+}
+.inputsName{
+    display: flex;
+}
+.avatar{
+    display: flex;
+}

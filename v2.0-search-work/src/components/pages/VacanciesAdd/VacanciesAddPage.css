@@ -32,20 +32,6 @@
     width: 75%;
     justify-content: space-between;
 }
-.vacanciesTittle button {
-    border: none;
-    border-radius: 7px;
-    background-color: rgba(0, 0, 128, 0.699);
-    font-size: 20px;
-    color: aliceblue;
-}
-.vacanciesTittle button:hover {
-    border: none;
-    border-radius: 7px;
-    background-color: rgba(0, 0, 128, 0.509);
-    font-size: 20px;
-    color: aliceblue;
-}
 
 .vacanciesPosition {
     margin: 5%;
@@ -65,4 +51,9 @@
 
 .vacanciesText {
     margin: 5%;
+}
+
+.btnAddVacancy {
+    display: flex;
+    justify-content: center;
 }
