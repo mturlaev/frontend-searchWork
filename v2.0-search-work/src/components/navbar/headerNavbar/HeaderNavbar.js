@@ -7,8 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchVacancy } from "../../feauters/searchVacanciSlice";
 import * as React from "react";
-import Button from "@mui/material/Button";
-import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+
+
 
 function HeaderNavbar() {
   const vacancy = useSelector((state) => state.search.vacancy);
@@ -27,7 +27,7 @@ function HeaderNavbar() {
     vacancy.filter(i => i.salary < 1)
   };
 
-  const arr = vacancy.filter((element) => {
+  const arr = vacancy?.filter((element) => {
     return element.name.toLowerCase().includes(text.toLowerCase());
   });
 
@@ -77,17 +77,7 @@ function HeaderNavbar() {
           <button onClick={() => handleSearch(text)}>Найти</button>
         </div>
 
-<<<<<<< HEAD
-      <div className="rightBox-navbarMain">
-        <button onClick={handleClick}>8-800-555-35-35</button>
 
-        <button onClick={handleClick}>
-          
-        </button>
-        <Link to="/signIn" path={<SignIn/>}>Вход</Link>
-        <Link to="/signUp" path={<SignUp />}>Регистрация</Link>
-
-=======
         <div className="rightBox-navbarMain">
           <button onClick={handleClick}>8-800-555-35-35</button>
           <button onClick={handleClick}>？</button>
@@ -98,7 +88,7 @@ function HeaderNavbar() {
             Регистрация
           </Link>
         </div>
->>>>>>> ea645d091534982e75273603a8b3004509435d24
+
       </div>
       {window.location.href === "http://localhost:3000/search/vacancy" && (
         <SearchPage arr={arr} />
