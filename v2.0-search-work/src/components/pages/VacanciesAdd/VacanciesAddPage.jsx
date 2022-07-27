@@ -1,6 +1,7 @@
 import { Button } from "@mui/material";
 import HeaderNavbar from "../../navbar/headerNavbar/HeaderNavbar";
 import "./VacanciesAddPage.css";
+import React from "react";
 
 const VacanciesAddPage = () => {
   return (

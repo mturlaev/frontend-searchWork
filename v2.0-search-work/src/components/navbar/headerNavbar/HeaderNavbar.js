@@ -11,6 +11,7 @@ import Button from "@mui/material/Button";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import { logout } from "../../feauters/userSlice";
 
+
 function HeaderNavbar() {
   const vacancy = useSelector((state) => state.search.vacancy);
   const searchText = useSelector(state => state.search.searchText)
@@ -29,7 +30,7 @@ function HeaderNavbar() {
     vacancy.filter(i => i.salary < 1)
   };
 
-  const arr = vacancy.filter((element) => {
+  const arr = vacancy?.filter((element) => {
     return element.name.toLowerCase().includes(text.toLowerCase());
   });
 
@@ -83,6 +84,7 @@ function HeaderNavbar() {
           <button onClick={() => handleSearch(text)}>Найти</button>
         </div>
 
+
         <div className="rightBox-navbarMain">
           <button onClick={handleClick}>8-800-555-35-35</button>
           <button onClick={handleClick}>？</button>
@@ -99,6 +101,7 @@ function HeaderNavbar() {
           </Link></div> }
           
         </div>
+
       </div>
       {window.location.href === "http://localhost:3000/search/vacancy" && (
         <SearchPage arr={arr} />
