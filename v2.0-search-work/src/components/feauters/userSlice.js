@@ -22,9 +22,9 @@ export const registration = createAsyncThunk(
       });
 
       const data = await res.json();
-
-      if (data.error) {
-        return thunkAPI.rejectWithValue(data.error);
+console.log(data)
+      if (data.message) {
+        return thunkAPI.rejectWithValue(data.message);
       } else {
         return thunkAPI.fulfillWithValue(data);
       }
@@ -69,24 +69,38 @@ export const userSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(registration.fulfilled, (state, action) => {
-        state.signingUp = false;
-        state.error = null;
+        state.signingUp = true;
+        state.loading = false
       })
       .addCase(registration.rejected, (state, action) => {
         state.signingUp = false;
-        state.error = "Такой пользователь уже существует";
+        state.error = action.payload;
+        state.loading = false
+
       })
+
+      .addCase(registration.pending, (state, action) => {
+        state.loading = true
+        state.signingUp = false;
+      })
+
       .addCase(login.fulfilled, (state, action) => {
-        state.signingIn = false;
+        state.signingIn = true;
         state.error = null;
-        state.token = action.payload.token;
+        state.token = action.payload.accessToken;
         state.isActivated = action.payload.user.isActivated;
         state.user = action.payload.user;
         state.email = action.payload.email;
       })
       .addCase(login.rejected, (state, action) => {
+        state.signingIn = false;
         state.error = action.payload;
       })
+      .addCase(login.pending, (state, action) => {
+        state.loading = true
+        state.signingIn = false;
+      })
+
       .addCase(logout.fulfilled, (state, action) => {
         state.signingIn = null;
         state.error = null;

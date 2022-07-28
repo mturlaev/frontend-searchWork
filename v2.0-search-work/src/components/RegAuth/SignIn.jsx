@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../feauters/userSlice';
 import { Link, useNavigate } from "react-router-dom";
@@ -12,6 +12,18 @@ const [password, setPassword]= useState("");
 const dispatch = useDispatch();
 const navigate = useNavigate();
 
+const error = useSelector((state) => state.user.error)
+const signingIn = useSelector((state) => state.user.signingIn)
+
+
+useEffect(() => {
+  console.log(signingIn);
+    if (signingIn) {
+      console.log(signingIn);
+      navigate('/')
+    }
+}, [signingIn])
+
 const handleSubmit = (e) => {
   e.preventDefault();
     if (
@@ -24,6 +36,7 @@ const handleSubmit = (e) => {
       setEmail("");
       setPassword("");
       navigate('/')
+      
     }
 }
 
@@ -56,6 +69,7 @@ const handleChangePassword = (e) => {
         onChange={(e) => handleChangePassword(e)} 
         />
         <button className={style.signInUpBtn} onClick={(e) => handleSubmit(e)}>Войти</button>
+        {(!error) ? null : <div className={style.error}>{error}</div>}
       <div className={style.linkDiv}>У вас нет аккаунта?<Link to='/signUp'>Зарегистрируйтесь</Link></div>
       </form>
     </div>
