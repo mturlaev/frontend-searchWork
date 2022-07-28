@@ -1,11 +1,10 @@
 import { useSelector } from "react-redux";
 import styles from "./SearchPage.module.css";
 import React from "react";
+import { Link } from "react-router-dom";
 
-const SearchPage = () => {
+const SearchPage = ({arr}) => {
 
-  const vacancy = useSelector((state) => state.search.vacancy);
-  
 
   
    return (
@@ -13,13 +12,14 @@ const SearchPage = () => {
       <div className={styles.divHeaderNavbar}>
       </div>
       <div className={styles.cardVacancy}>
-        {vacancy.map((element, id) => {
+        {arr.map((element, id) => {
           return (
             <div key={id} className={styles.cardListVacancy}>
-              <h5>{element.name}</h5>
-              <div>{element.salary}</div>
+              <h4><Link to={`/viewVacancy/${element._id}`}>{element.name}</Link></h4>
+              
+              <h5>{element.salary}</h5>
               <div>{element.company}</div>
-              <div>{element.city}</div>
+              <h5>{element.city}</h5>
               <div>{element.text.slice(0, 70) + "..."}</div>
             </div>
           );

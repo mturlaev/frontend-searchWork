@@ -1,10 +1,11 @@
 .mainCard {
     width: 100%;
+    padding-top: 50px;
 }
-
 .cardListVacancy {
+    
     width: 60%;
-    margin: 30px 190px;
+    margin-left: 190px;
     background: white;
     padding: 1.5%;
     border-radius: 5px;

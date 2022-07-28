@@ -5,50 +5,43 @@ import "./headerNavbar.css";
 import SearchPage from "../../pages/SearchWorkPage/SearchPage";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { fetchVacancy } from "../../feauters/searchVacanciSlice";
-
-
-
+import { fetchVacancy, finder } from "../../feauters/searchVacanciSlice";
 
 function HeaderNavbar() {
   const vacancy = useSelector((state) => state.search.vacancy);
-  const searchText = useSelector(state => state.search.searchText)
+  const searchText = useSelector((state) => state.search.searchText);
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [text, setText] = useState(searchText ? searchText : "");
-  
+  console.log("SEDWDWD", searchText);
 
-  const [vacancySearch, setVacancySearch] = useState({vacancy})
+  const [vacancySearch, setVacancySearch] = useState({ vacancy });
 
   const handlChange = (e) => {
     setText(e.target.value);
-    
-    vacancy.filter(i => i.salary < 1)
+
+    vacancy.filter((i) => i.salary < 1);
   };
 
-  const arr = vacancy?.filter((element) => {
-    return element.name.toLowerCase().includes(text.toLowerCase());
-  });
+  // console.log(vacancy)
+
+  const arr = vacancy?.filter((element) =>
+    element.name.toLowerCase().includes(text.toLowerCase())
+  );
+  console.log(arr);
 
   useEffect(() => {
     dispatch(fetchVacancy());
-  }, [dispatch]);
+    dispatch(finder(text));
+  }, [dispatch, text]);
 
-  const handleClick = () => {
-
-  };
+  const handleClick = () => {};
 
   const handleSearch = (text) => {
-    // setTextSearch();
-    // setVacancySearch({arr});
-    setText(text)
-    
-    console.log(text)
-    localStorage.setItem('text',text)
-    navigate('/search/vacancy')
+    navigate("/search/vacancy");
   };
-  console.log(window.location.href);
+  // console.log(window.location.href);
 
   return (
     <>
@@ -77,7 +70,6 @@ function HeaderNavbar() {
           <button onClick={() => handleSearch(text)}>Найти</button>
         </div>
 
-
         <div className="rightBox-navbarMain">
           <button onClick={handleClick}>8-800-555-35-35</button>
           <button onClick={handleClick}>？</button>
@@ -88,13 +80,11 @@ function HeaderNavbar() {
             Регистрация
           </Link>
         </div>
-
       </div>
       {window.location.href === "http://localhost:3000/search/vacancy" && (
         <SearchPage arr={arr} />
       )}
     </>
-
   );
 }
 

@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 
 export const fetchVacancy = createAsyncThunk(
@@ -17,6 +17,12 @@ export const fetchVacancy = createAsyncThunk(
         }
     }
 )
+
+export const finder = createAsyncThunk('finder', 
+  async (text, thunkApi) => {
+    return text
+  }
+)
  
 export const searchVacanciSlice = createSlice ({
     name: "search",
@@ -24,11 +30,15 @@ export const searchVacanciSlice = createSlice ({
         vacancy: [],
         loading: false,
         error: null,
-        searchText: localStorage.getItem('text')
+        searchText: ''
     },
     reducers: {},
     extraReducers: (builder) => {
         builder
+
+        .addCase(finder.fulfilled, (state, action) => {
+          state.searchText = action.payload
+        })
         .addCase(fetchVacancy.pending, (state, action) => {
           state.loading = true;          
         })
