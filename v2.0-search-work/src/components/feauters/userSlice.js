@@ -22,7 +22,6 @@ export const registration = createAsyncThunk(
       });
 
       const data = await res.json();
-console.log(data)
       if (data.message) {
         return thunkAPI.rejectWithValue(data.message);
       } else {
@@ -44,9 +43,8 @@ export const login = createAsyncThunk(
         body: JSON.stringify({ email, password }),
       });
       const data = await res.json();
-
-      if (data.error) {
-        return thunkAPI.rejectWithValue(data.error);
+      if (data.message) {
+        return thunkAPI.rejectWithValue(data.message);
       } else {
         localStorage.setItem("isActivated", data?.user?.isActivated);
         localStorage.setItem("token", data.accessToken);
