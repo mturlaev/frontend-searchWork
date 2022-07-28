@@ -28,14 +28,14 @@
 .email {
   height: 50px;
   margin-top: 40px;
-  border-radius: 3px;
+  border-radius: 5px;
   border: 2px solid gray;
 }
 
 .password {
   margin-top: 20px;
   margin-bottom: 20px;
-  border-radius: 3px;
+  border-radius: 5px;
   border: 2px solid gray;
   height: 50px;
 }
@@ -52,7 +52,7 @@
 .signInUpBtn {
   color: #fff;
   background-color: #1976d2;
-  border-radius: 3px;
+  border-radius: 5px;
   border: none;
   padding: 5px 0;
   text-align: center;
@@ -81,4 +81,8 @@
 
 .linkDiv a {
   text-decoration: none;
+}
+
+.error {
+  color: rgb(144, 22, 22);
 }

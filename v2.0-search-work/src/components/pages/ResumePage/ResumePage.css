@@ -1,3 +1,7 @@
+.resumeBigMain{
+    background-image: url(https://static.vecteezy.com/system/resources/previews/002/256/477/original/stock-and-graph-design-background-business-graph-banner-design-eps10-illustration-free-vector.jpg);
+    background-size: cover;
+}
 .fotografia{
     width: 200px;
     height: 200px;
@@ -9,10 +13,133 @@
 .inputText{
     display: flex;
     flex-direction:column;
+    width: 70%;
+    margin-bottom: 22px;
+    font-size: 23px;
+    font-family: math;
+}
+
+.inputTexts{
+    height: 35px;
+}
+.inputTexts3{
+    height: 35px;
+    width: 240px;
+}
+.inputText2{
+    display: flex;
+    flex-direction:column;
+    width: 70%;
+    margin-bottom: 22px;
+    margin-right: 5%;
+    font-size: 23px;
+    font-family: math;
+    
+}
+.inputText2 .inputTexts3{
+    padding-left: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 8px;
+}
+.inputText .inputTexts{
+    padding-left: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 8px;
 }
 .inputsName{
     display: flex;
 }
 .avatar{
     display: flex;
+    gap: 45px;
+    justify-content: center;
+}
+.resumeMain{
+    width: 70%;
+    border-radius: 10px;
+    background-color: aliceblue;
+    position: relative;
+    left: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.inputsMain{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.addFoto{
+    text-align: center;
+}
+.inputsName{
+    display: flex;
+    align-items: flex-end;
+    margin-left: 133px;
+}
+.btnFoto{
+    width: 30%;
+    height: 38px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1976d2;
+    color: #fff;
+    cursor: pointer;
+}
+.btnFoto:hover{
+background-color: #0d5fb0;
+}
+.btns-result{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+}
+.text-foto{
+    font-family: math;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.StackFetch{
+    width: 90%;
+    /* height: 60px; */
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin: auto;
+}
+.hrishe{
+    width: 92%;
+    margin-left: 4%;
+}
+.h1nishe{
+    margin-left: 4%;
+    margin-top: 2%;
+    font-family: math;
+}
+.stack-result{
+    border-radius: 5px;
+    border: none;
+    background-color: #fff;
+    box-shadow: 2px 2px 4px 4px;
+    font-size: 20px;
+    font-family: math;
+    height: 35px;
+    width: 22%;
+    padding-left: 16px;
+    display: flex;
+    justify-content: space-around;
+}
+.remove_btn{
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+    color: red;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+    display: flex;
+    align-items: center;
 }
