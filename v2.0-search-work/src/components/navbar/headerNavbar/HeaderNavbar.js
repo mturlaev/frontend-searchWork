@@ -18,7 +18,7 @@ function HeaderNavbar() {
   const dispatch = useDispatch();
 
   const navigate = useNavigate()
-  const token = localStorage.getItem('token')
+  const token = useSelector((state) => state.user.token)
 
   const [text, setText] = useState(searchText ? searchText : "");
 
@@ -27,7 +27,7 @@ function HeaderNavbar() {
   };
 
   const arr = vacancy?.filter((element) => {
-    return element.name.toLowerCase().includes(text.toLowerCase());
+    // return element.name.toLowerCase().includes(text.toLowerCase());
   });
 
   useEffect(() => {
@@ -38,6 +38,7 @@ function HeaderNavbar() {
 
   const handleLogoutClick = () => {
     dispatch(logout());
+    
   }
 
   const handleSearch = (text) => {
