@@ -20,7 +20,10 @@ function HeaderNavbar() {
   const searchText = useSelector((state) => state.search.searchText);
   const dispatch = useDispatch();
 
-  const navigate = useNavigate();
+
+  const navigate = useNavigate()
+  const token = useSelector((state) => state.user.token)
+
 
   const [text, setText] = useState(searchText ? searchText : "");
   console.log("SEDWDWD", searchText);
@@ -34,12 +37,14 @@ function HeaderNavbar() {
 
   };
 
+
   // console.log(vacancy)
 
   const arr = vacancy?.filter((element) =>
     element.name.toLowerCase().includes(text.toLowerCase())
   );
   console.log(arr);
+
 
   useEffect(() => {
     dispatch(fetchVacancy());
@@ -55,7 +60,14 @@ function HeaderNavbar() {
 
   const handleLogoutClick = () => {
     dispatch(logout());
+    
   }
+
+
+  const handleSearch = (text) => {
+    setText(text);
+    navigate("/search/vacancy");
+  };
 
 
   return (
