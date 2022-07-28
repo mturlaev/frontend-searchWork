@@ -5,12 +5,21 @@ import "./headerNavbar.css";
 import SearchPage from "../../pages/SearchWorkPage/SearchPage";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+
 import { fetchVacancy, finder } from "../../feauters/searchVacanciSlice";
+
+import { fetchVacancy } from "../../feauters/searchVacanciSlice";
+import * as React from "react";
+import Button from "@mui/material/Button";
+import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+import { logout } from "../../feauters/userSlice";
+
 
 function HeaderNavbar() {
   const vacancy = useSelector((state) => state.search.vacancy);
   const searchText = useSelector((state) => state.search.searchText);
   const dispatch = useDispatch();
+
   const navigate = useNavigate();
 
   const [text, setText] = useState(searchText ? searchText : "");
@@ -22,6 +31,7 @@ function HeaderNavbar() {
     setText(e.target.value);
 
     vacancy.filter((i) => i.salary < 1);
+
   };
 
   // console.log(vacancy)
@@ -36,25 +46,26 @@ function HeaderNavbar() {
     dispatch(finder(text));
   }, [dispatch, text]);
 
-  const handleClick = () => {};
 
   const handleSearch = (text) => {
     navigate("/search/vacancy");
   };
   // console.log(window.location.href);
 
+
+  const handleLogoutClick = () => {
+    dispatch(logout());
+  }
+
+
   return (
     <>
       <div className="headerNavbarMain">
         <div className="leftBox-navbarMain">
-          <button>
-            <img
-              src="https://vibromotors.ru/img/mobile-menu-icon.png"
-              alt="anzor"
-              width={"20px"}
-              onClick={handleClick}
-            />
-          </button>
+          
+          <Button>
+          <MenuOutlinedIcon />
+          </Button>
           <h3>
             <Link to="/">Название</Link>
           </h3>
@@ -73,12 +84,18 @@ function HeaderNavbar() {
         <div className="rightBox-navbarMain">
           <button onClick={handleClick}>8-800-555-35-35</button>
           <button onClick={handleClick}>？</button>
-          <Link to="/signIn" path={<SignIn />}>
+          {token ? <button onClick={handleLogoutClick}>Выход</button> : <div><Link to="/signIn" path={<SignIn />}>
+            <button>
             Вход
+            </button>
           </Link>
           <Link to="/signUp" path={<SignUp />}>
+            <button>
+
             Регистрация
-          </Link>
+            </button>
+          </Link></div> }
+          
         </div>
       </div>
       {window.location.href === "http://localhost:3000/search/vacancy" && (

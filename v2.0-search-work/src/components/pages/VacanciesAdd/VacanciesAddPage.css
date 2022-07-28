@@ -26,6 +26,10 @@
     margin: auto;
 }
 
+.vacanciesAddPage-RightContent h3 {
+    color: black;
+}
+
 .vacanciesTittle {
     display: flex;
     margin: 5%;
