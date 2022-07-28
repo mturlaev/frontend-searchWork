@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 
 import { fetchVacancy, finder } from "../../feauters/searchVacanciSlice";
 
-import { fetchVacancy } from "../../feauters/searchVacanciSlice";
 import * as React from "react";
 import Button from "@mui/material/Button";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
@@ -52,10 +51,6 @@ function HeaderNavbar() {
   }, [dispatch, text]);
 
 
-  const handleSearch = (text) => {
-    navigate("/search/vacancy");
-  };
-  // console.log(window.location.href);
 
 
   const handleLogoutClick = () => {
@@ -68,6 +63,10 @@ function HeaderNavbar() {
     setText(text);
     navigate("/search/vacancy");
   };
+
+  const handleClick = () => {
+    alert("ЛИШНИ ХУМШ МА ЯЗ ЕЙШ")
+  }
 
 
   return (
