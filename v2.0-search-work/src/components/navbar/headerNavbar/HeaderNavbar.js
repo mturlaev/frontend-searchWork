@@ -26,8 +26,10 @@ function HeaderNavbar() {
     setText(e.target.value);
   };
 
+
   const arr = vacancy?.filter((element) => {
     // return element.name.toLowerCase().includes(text.toLowerCase());
+
   });
 
   useEffect(() => {
@@ -43,7 +45,6 @@ function HeaderNavbar() {
 
   const handleSearch = (text) => {
     setText(text);
-
     navigate("/search/vacancy");
   };
 
