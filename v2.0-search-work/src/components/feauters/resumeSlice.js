@@ -1,4 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { useSelector } from "react-redux";
+
 
 export const fetchCategory = createAsyncThunk("category/fetch", async (_, thunkAPI) => {
   try {
@@ -11,11 +13,11 @@ export const fetchCategory = createAsyncThunk("category/fetch", async (_, thunkA
 })
 
 export const postResume = createAsyncThunk("/resume/post", async ({img, name, surName, age, phone, email, city, category, position, experience}, thunkAPI) => {
-  const state = thunkAPI.getState()  
+  const state = thunkAPI.getState();
   try {
       const formData = new FormData()
       console.log(img)
-      formData.append("image", img)
+      formData.append("img", img)
       formData.append('name', name)
       formData.append('surname', surName)
       formData.append('age', age)
@@ -28,9 +30,12 @@ export const postResume = createAsyncThunk("/resume/post", async ({img, name, su
 
       const res = await fetch("http://localhost:4000/resume", {
         method: "POST",
+        headers: { "Content-type": "application/json",
+        Authorization: `Bearer ${state.user.token}` 
+      },
         body: formData
       });
-      const data = res.json();
+      const data = await res.json();
       return data
     } catch (error) {
       thunkAPI.rejectWithValue(error.message)

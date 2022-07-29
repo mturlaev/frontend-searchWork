@@ -56,7 +56,7 @@ function HeaderNavbar() {
   //   navigate("/search/vacancy");
   // };
   // console.log(window.location.href);
-  const handleClick = () => {};
+  // const handleClick = () => {};
 
 
   const handleLogoutClick = () => {
