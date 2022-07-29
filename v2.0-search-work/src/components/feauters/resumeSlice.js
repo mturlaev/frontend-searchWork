@@ -20,6 +20,12 @@ export const postResume = createAsyncThunk("/resume/post", async ({img, name, su
       formData.append('surname', surName)
       formData.append('age', age)
       formData.append('phone', phone)
+      formData.append('email', email)
+      formData.append('city', city)
+      formData.append('categoryId', category)
+      formData.append('position', position)
+      formData.append('experience', experience)
+
       const res = await fetch("http://localhost:4000/resume", {
         method: "POST",
         body: formData
@@ -44,7 +50,7 @@ export const resumeSlice = createSlice({
   extraReducers: (builder) => {
     builder
     .addCase(postResume.fulfilled, (state, action) => {
-      state.resume = action.payload
+      state.resume = state.resume.push(action.payload)
       state.loading = false
     })
     .addCase(fetchCategory.fulfilled, (state, action) => {

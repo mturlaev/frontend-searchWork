@@ -1,6 +1,7 @@
 .resumeBigMain{
     background-image: url(https://static.vecteezy.com/system/resources/previews/002/256/477/original/stock-and-graph-design-background-business-graph-banner-design-eps10-illustration-free-vector.jpg);
     background-size: cover;
+
 }
 .fotografia{
     width: 200px;
@@ -65,6 +66,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    top: 4em;
+
 }
 .inputsMain{
     display: flex;
