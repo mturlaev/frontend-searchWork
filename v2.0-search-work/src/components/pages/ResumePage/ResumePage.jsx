@@ -202,7 +202,7 @@ const ResumePage = () => {
           Телефон
           <input
             className="inputTexts"
-            type="text"
+            type="tel"
             value={phone}
             placeholder="+7(999)-999-99-99"
             onChange={(e) => handlePhoneChange(e)}

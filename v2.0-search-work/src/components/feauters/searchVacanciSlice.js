@@ -46,9 +46,24 @@ export const createVacancy = createAsyncThunk(
   }
 );
 
+
 export const finder = createAsyncThunk("finder", async (text, thunkApi) => {
   return text;
 });
+
+export const fethResponses = createAsyncThunk(
+  "responses/fetch",
+  async (_, thunkApi) => {
+    try {
+      const res = await fetch("http://localhost:4000/response");
+      const data = await res.json();
+      return data;
+    } catch (error) {
+      thunkApi.rejectWithValue(error.message);
+    }
+  }
+);
+
 
 export const searchVacanciSlice = createSlice({
   name: "search",
@@ -57,6 +72,8 @@ export const searchVacanciSlice = createSlice({
     loading: false,
     error: null,
     searchText: "",
+
+    response: [],
   },
   reducers: {},
   extraReducers: (builder) => {
@@ -75,7 +92,14 @@ export const searchVacanciSlice = createSlice({
         state.loading = false;
         state.vacancy = action.payload.vacancy;
         state.error = action.payload;
-      });
+
+      })
+      .addCase(fethResponses.fulfilled, (state, action) => {
+        state.responses = action.payload;
+        state.loading = false;
+        state.error = action.payload
+      })
+
   },
 });
 
