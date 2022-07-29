@@ -1,4 +1,5 @@
 .mainSozdContentContainer {
+
 }
 
 .mainSozdContentTittle {
@@ -62,6 +63,7 @@
     display: flex;
     flex-wrap: wrap;
     background: whitesmoke;
+    border-radius: 7px;
 }
 
 .mainSozdContentVacancyCard-OneVacancy {
@@ -120,11 +122,67 @@
     justify-content: space-between;
 }
 
-.mainSozdContentVacancyFooterImg {
-    margin-top: 3%;
-    width: 100%;
-    height: 300px;
-    background-image: url(https://as2.ftcdn.net/v2/jpg/05/19/07/51/1000_F_519075176_kGnRm8jRM7vE31D6SxhtPkKblxQxqy07.jpg);
-    background-size: cover;
+.mainSozdContentVacancyCard-Salary-Btn {
+    display: flex;
+    justify-content: space-between;
+}
+.mainSozdContentVacancyCard-Salary-Btn button {
+    border: none;
+    background: #1e8fffd0;
+    color: whitesmoke;
+    border-radius: 6px;
+    transition-duration: 0.3s;
+}
+.mainSozdContentVacancyCard-Salary-Btn button:hover {
+    border: none;
+    background: rgba(1, 168, 1, 0.736);
+    color: whitesmoke;
     border-radius: 6px;
 }
+
+.mainSozdContentVacancyCardBtn {
+    background: whitesmoke;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    font-family: system-ui;
+    padding-bottom: 3%;
+}
+.mainSozdContentVacancyCardBtn button {
+    border: none;
+    border-radius: 7px;
+    background: #5677fc;
+    color: white;
+    padding: 0.7% 2%;
+    margin-top: 2.5%;
+}
+.mainSozdContentVacancyCardBtn button:hover {
+    border: none;
+    border-radius: 7px;
+    background: #5677fcb9;
+    color: white;
+    padding: 0.7% 2%;
+}
+
+.mainSozdContentVacancyFooterText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: gainsboro;
+    padding-bottom: 2%;
+}
+
+.mainSozdContentVacancyFooterTextTittle {
+    margin-top: 3%;
+}
+
+.mainSozdContentVacancyFooterTextImg {
+    margin-top: 1%;
+    display: flex;
+    gap: 3%
+}
+
+.mainSozdContentVacancyFooterTextImg img {
+    cursor: pointer;
+}
+
