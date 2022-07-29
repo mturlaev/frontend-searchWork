@@ -1,3 +1,130 @@
 .mainSozdContentContainer {
+}
 
+.mainSozdContentTittle {
+  background-image: url(https://as1.ftcdn.net/v2/jpg/05/18/85/66/1000_F_518856625_wMHbJtDJAvhb3puOqZ5RxbgktCqdAI7m.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.tittleText {
+
+}
+.tittleText h1 {
+    font-size: 50px;
+    color: rgba(255, 255, 255, 0.777);
+}
+.tittleText h3 {
+    font-size: 50px;
+    color: rgba(255, 255, 255, 0.576);
+}
+
+.mainSozdContentText {
+  display: flex;
+  background: whitesmoke;
+  padding: 5% 0;
+  border-radius: 5px;
+}
+.mainSozdContentText h3 {
+  color: rgba(0, 0, 0, 0.722);
+  font-size: 20px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.mainSozdContentTextResume {
+  width: 25%;
+  text-align: center;
+}
+
+.mainSozdContentTextCompany {
+  width: 25%;
+  text-align: center;
+}
+
+.mainSozdContentTextSalary {
+  width: 25%;
+  text-align: center;
+}
+
+.mainSozdContentTextVacancy {
+  width: 25%;
+  text-align: center;
+}
+
+
+.mainSozdContentVacancyCard {
+    display: flex;
+    flex-wrap: wrap;
+    background: whitesmoke;
+}
+
+.mainSozdContentVacancyCard-OneVacancy {
+    width: 22%;
+    height: 170px;
+    margin: 1%;
+    padding: 1%;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.2);
+    transition-duration: 0.3s;
+}
+.mainSozdContentVacancyCard-OneVacancy:hover {
+    width: 22.1%;
+    height: 171px;
+    margin: 1%;
+    padding: 1%;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 10px 30px 0 rgba(0,0,0,0.2);
+    transition-duration: 0.3s;
+}
+
+.mainSozdContentVacancyCard-Tittle {
+    display: flex;
+    justify-content: space-around;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(95, 92, 92, 0.796);
+    height: 35%;
+}
+
+.mainSozdContentVacancyCard-Company {
+    text-align: center;
+    font-weight: 700;
+    color: black;
+}
+
+.mainSozdContentVacancyCard-City {
+    text-align: center;
+}
+
+.mainSozdContentVacancyCard-Name {
+    font-weight: 800;
+    font-size: 17.5px;
+    height: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+.mainSozdContentVacancyCard-Salary {
+    color: rgba(1, 168, 1, 0.736);
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mainSozdContentVacancyFooterImg {
+    margin-top: 3%;
+    width: 100%;
+    height: 300px;
+    background-image: url(https://as2.ftcdn.net/v2/jpg/05/19/07/51/1000_F_519075176_kGnRm8jRM7vE31D6SxhtPkKblxQxqy07.jpg);
+    background-size: cover;
+    border-radius: 6px;
 }

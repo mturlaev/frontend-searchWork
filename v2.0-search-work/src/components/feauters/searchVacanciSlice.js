@@ -1,4 +1,4 @@
-import { createAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const fetchVacancy = createAsyncThunk(
   "fetchVacancy",
@@ -46,6 +46,7 @@ export const createVacancy = createAsyncThunk(
   }
 );
 
+
 export const finder = createAsyncThunk("finder", async (text, thunkApi) => {
   return text;
 });
@@ -63,6 +64,7 @@ export const fethResponses = createAsyncThunk(
   }
 );
 
+
 export const searchVacanciSlice = createSlice({
   name: "search",
   initialState: {
@@ -70,6 +72,7 @@ export const searchVacanciSlice = createSlice({
     loading: false,
     error: null,
     searchText: "",
+
     response: [],
   },
   reducers: {},
@@ -89,12 +92,14 @@ export const searchVacanciSlice = createSlice({
         state.loading = false;
         state.vacancy = action.payload.vacancy;
         state.error = action.payload;
+
       })
       .addCase(fethResponses.fulfilled, (state, action) => {
         state.responses = action.payload;
         state.loading = false;
         state.error = action.payload
       })
+
   },
 });
 
