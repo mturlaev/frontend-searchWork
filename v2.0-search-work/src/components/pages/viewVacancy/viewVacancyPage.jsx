@@ -20,7 +20,7 @@ const ViewVacancyPage = () => {
   }, [dispatch]);
 
   // const [banan, setBanan] = useState("");
-
+//fasd
   return (
     <>
     <HeaderNavbar />
