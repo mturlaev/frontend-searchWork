@@ -17,6 +17,62 @@ export const fetchVacancy = createAsyncThunk(
   }
 );
 
+export const fetchResponse = createAsyncThunk("response/fetch", async (_, thunkApi) => {
+  try {
+    const res = await fetch("http://localhost:4000/response");
+    const data = await res.json()
+    if (data.error) {
+      return thunkApi.rejectWithValue(data.error);
+    } else {
+      return thunkApi.fulfillWithValue(data);
+    }
+  } catch (error) {
+    thunkApi.rejectWithValue(error.message)
+  }
+})
+
+export const postResponses = createAsyncThunk("response/post", async ({element, checked,}, thunkApi) => {
+  try {
+    const res = await fetch("http://localhost:4000/response", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        vacancy: element
+      })
+    });
+    const data = await res.json()
+    if (data.error) {
+      return thunkApi.rejectWithValue(data.error)
+    }
+    return thunkApi.fulfillWithValue(data)
+  } catch (error) {
+    thunkApi.rejectWithValue(error.message)
+  }
+});
+
+export const  patchVacancies = createAsyncThunk("vacancies/patch", async ({element, checked}, thunkApi) => {
+  try {
+    const res = await fetch(`http://localhost:4000/vacancy/${element}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify({
+        checked: !checked,
+      })
+    });
+    const data = await res.json()
+    if (data.error) {
+      return thunkApi.rejectWithValue(data.error)
+    }
+    return thunkApi.fulfillWithValue(data)
+  } catch (error) {
+    thunkApi.rejectWithValue(error.message)
+  }
+})
+
 export const createVacancy = createAsyncThunk(
   "createVacancy",
   async (
@@ -51,18 +107,18 @@ export const finder = createAsyncThunk("finder", async (text, thunkApi) => {
   return text;
 });
 
-export const fethResponses = createAsyncThunk(
-  "responses/fetch",
-  async (_, thunkApi) => {
-    try {
-      const res = await fetch("http://localhost:4000/response");
-      const data = await res.json();
-      return data;
-    } catch (error) {
-      thunkApi.rejectWithValue(error.message);
-    }
-  }
-);
+// export const fethResponses = createAsyncThunk(
+//   "responses/fetch",
+//   async (_, thunkApi) => {
+//     try {
+//       const res = await fetch("http://localhost:4000/response");
+//       const data = await res.json();
+//       return data;
+//     } catch (error) {
+//       thunkApi.rejectWithValue(error.message);
+//     }
+//   }
+// );
 
 
 export const searchVacanciSlice = createSlice({
@@ -72,8 +128,8 @@ export const searchVacanciSlice = createSlice({
     loading: false,
     error: null,
     searchText: "",
-
     response: [],
+    checked: false
   },
   reducers: {},
   extraReducers: (builder) => {
@@ -94,12 +150,23 @@ export const searchVacanciSlice = createSlice({
         state.error = action.payload;
 
       })
-      .addCase(fethResponses.fulfilled, (state, action) => {
-        state.responses = action.payload;
+    builder
+      .addCase(fetchResponse.fulfilled, (state, action) => {
+        state.response = action.payload;
         state.loading = false;
         state.error = action.payload
       })
-
+      .addCase(postResponses.fulfilled, (state, action) => {
+        state.response = action.payload;
+        state.checked = !state.checked
+        state.error = action.payload
+      })
+      .addCase(patchVacancies.fulfilled, (state, action) => {
+        state.vacancy = action.payload
+        state.error = action.payload
+        state.loading = false
+        state.checked = !state.checked
+      })
   },
 });
 

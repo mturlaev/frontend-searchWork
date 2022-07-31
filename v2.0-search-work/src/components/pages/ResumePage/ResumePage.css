@@ -1,7 +1,6 @@
 .resumeBigMain{
     background-image: url(https://static.vecteezy.com/system/resources/previews/002/256/477/original/stock-and-graph-design-background-business-graph-banner-design-eps10-illustration-free-vector.jpg);
     background-size: cover;
-
 }
 .fotografia{
     width: 200px;
@@ -34,20 +33,24 @@
     margin-bottom: 22px;
     margin-right: 5%;
     font-size: 23px;
-    font-family: math;
+    font-family: system-ui;
     
 }
 .inputText2 .inputTexts3{
     padding-left: 10px;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 18px;
     margin-top: 8px;
+    border: none;
+    outline: none;
 }
 .inputText .inputTexts{
     padding-left: 10px;
     border-radius: 5px;
     font-size: 18px;
     margin-top: 8px;
+    border: none;
+    outline: none;
 }
 .inputsName{
     display: flex;
@@ -60,14 +63,13 @@
 .resumeMain{
     width: 70%;
     border-radius: 10px;
-    background-color: aliceblue;
+    background-color: whitesmoke;
     position: relative;
     left: 15%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    top: 4em;
-
+    padding-top: 4em;
 }
 .inputsMain{
     display: flex;
@@ -100,7 +102,7 @@ background-color: #0d5fb0;
     margin-top: 25px;
 }
 .text-foto{
-    font-family: math;
+    font-family: system-ui;
     font-size: 20px;
     cursor: pointer;
 }
@@ -128,7 +130,7 @@ background-color: #0d5fb0;
     background-color: #fff;
     box-shadow: 2px 2px 4px 4px;
     font-size: 20px;
-    font-family: math;
+    font-family: system-ui;
     height: 35px;
     width: 22%;
     padding-left: 16px;

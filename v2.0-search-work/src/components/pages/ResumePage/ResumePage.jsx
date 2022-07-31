@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import logo from "../../images/logo.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCategory, postResume } from "../../feauters/resumeSlice";
+import { fetchCategory, patchResume, postResume } from "../../feauters/resumeSlice";
 import "./ResumePage.css";
 
 const ResumePage = () => {
@@ -26,7 +26,8 @@ const ResumePage = () => {
   const searchStack = stack.filter((item) =>
     item.name.toLowerCase().includes(text.toLowerCase())
   );
-  console.log(searchStack);
+
+  // console.log(searchStack)
 
   useEffect(() => {
     if (img) {
@@ -54,21 +55,22 @@ const ResumePage = () => {
         phone,
         email,
         city,
-        category,
         position,
         experience,
-      })
+      }),
+      patchResume({category})
     );
-    setImg("");
-    setName("");
-    setSurName("");
-    setAge("");
-    setPhone("");
-    setEmail("");
-    setCity("");
-    setCategory([]);
-    setPosition("");
-    setExperience("");
+    console.log(category);
+    // setImg("");
+    // setName("");
+    // setSurName("");
+    // setAge("");
+    // setPhone("");
+    // setEmail("");
+    // setCity("");
+    // setCategory([]);
+    // setPosition("");
+    // setExperience("");
   };
 
   const clearForm = () => {
@@ -290,7 +292,7 @@ const ResumePage = () => {
           {searchStack.map((item, index) => {
             return (
               <div className="stackList" key={index}>
-                <button onClick={() => handlePush(item, index)}>
+                <button onClick={() => handlePush(item._id, index)}>
                   {item.name}
                 </button>
               </div>
