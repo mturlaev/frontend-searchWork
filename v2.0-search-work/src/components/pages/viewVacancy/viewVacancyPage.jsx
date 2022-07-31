@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchVacancy } from "../../feauters/searchVacanciSlice";
-import SearchPage from "../SearchWorkPage/SearchPage";
 import styles from "./viewVacancy.module.css";
 
 const ViewVacancyPage = () => {

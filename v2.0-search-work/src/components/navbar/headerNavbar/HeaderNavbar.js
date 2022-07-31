@@ -25,7 +25,7 @@ function HeaderNavbar() {
 
 
   const [text, setText] = useState(searchText ? searchText : "");
-  console.log("SEDWDWD", searchText);
+  
 
   const [vacancySearch, setVacancySearch] = useState({ vacancy });
 
@@ -56,7 +56,7 @@ function HeaderNavbar() {
   //   navigate("/search/vacancy");
   // };
   // console.log(window.location.href);
-  const handleClick = () => {};
+  // const handleClick = () => {};
 
 
   const handleLogoutClick = () => {
