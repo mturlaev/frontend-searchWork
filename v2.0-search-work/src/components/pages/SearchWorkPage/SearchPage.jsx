@@ -16,7 +16,6 @@ const SearchPage = ({arr}) => {
           return (
             <div key={id} className={styles.cardListVacancy}>
               <h4><Link to={`/viewVacancy/${element._id}`}>{element.name}</Link></h4>
-              
               <h5>{element.salary}</h5>
               <div>{element.company}</div>
               <h5>{element.city}</h5>
