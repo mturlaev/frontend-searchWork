@@ -9,3 +9,26 @@
     padding: 1.5%;
     border-radius: 5px;
 }
+.cardListVacancy a{
+    text-decoration: none;
+}
+.otclickBtn{
+    border: none;
+    background-color: #1976d2;
+    border-radius: 8px;
+    color: whitesmoke;
+    padding: 5px 5px;
+}
+.otclickBtn:hover{
+    background-color: #0d5fb0;
+}
+.otclickBtn2{
+    border: none;
+    background-color: #7fff00;
+    border-radius: 8px;
+    color: white;
+    padding: 5px 5px;
+}
+.otclickBtn2:hover{
+    background-color: #19e619;
+}

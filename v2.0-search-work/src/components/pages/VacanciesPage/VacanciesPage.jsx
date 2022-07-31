@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {  fetchVacancies } from "../../feauters/resumeSlice";
+import { fetchVacancy } from "../../feauters/searchVacanciSlice";
+
 import styles from "./VacanciesPage.module.css";
 
 const VacanciesPage = () => {
@@ -26,7 +27,7 @@ const VacanciesPage = () => {
 //   console.log(arr);
 
   useEffect(() => {
-    dispatch(fetchVacancies);
+    dispatch(fetchVacancy);
   }, [dispatch]);
 
   return (
