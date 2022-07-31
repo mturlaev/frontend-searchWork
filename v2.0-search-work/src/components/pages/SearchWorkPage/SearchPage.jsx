@@ -44,10 +44,10 @@ useEffect(() => {
               <h5>{element.salary}</h5>
               <div>{element.company}</div>
               <h5>{element.city}</h5>
-              <div>{element.text.slice(0, 70) + "..."}</div>
+              <div>{element.text.slice(0, 166) + "..."}</div>
               <hr/>
               <div>{!element.checked ? <button className={styles.otclickBtn} onClick={() => addResponse(element._id, element.checked)}>откликнуться</button>
-              : <button className={styles.otclickBtn} onClick={() => addResponse(element._id, element.checked)}>Вы откликнулись</button>}</div>
+              : <button className={styles.otclickBtn2} onClick={() => addResponse(element._id, element.checked)}>Вы откликнулись</button>}</div>
             </div>
           )
           ;

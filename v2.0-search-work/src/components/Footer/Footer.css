@@ -15,11 +15,33 @@ border-bottom: 1px solid black;
     border-bottom: 1px solid grey;
 }
 .footerText:hover{
-    color: rgb(50, 50, 50);
+    color: black;
     margin-bottom: 1em;
     border-bottom: 1px solid black;
+    font-size: 16.2px;
+
 }
 .footerText a {
     color: rgb(50, 50, 50);
     text-decoration: none;
+}
+.footerText a:hover {
+    color: black;
+    margin-bottom: 1em;
+    font-size: 16.2px;
+
+}
+.applicants{
+    width: 11%;
+
+}
+.employers{
+    width: 13%;
+
+}
+.lorem{
+    width: 16%;
+}
+.lorem1{
+    width: 11%;
 }

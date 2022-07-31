@@ -20,7 +20,7 @@ export default function MainSozdContent() {
     <div className="mainSozdContentContainer">
       <div className="mainSozdContentTittle">
         <div className="tittleText">
-          <h1>Название -</h1>
+          <h1>Belhlo -</h1>
           <h3>это платформа для поиска работы</h3>
         </div>
       </div>
@@ -79,7 +79,7 @@ export default function MainSozdContent() {
 
       <div className="mainSozdContentVacancyFooterText">
         <div className="mainSozdContentVacancyFooterTextTittle">
-          Название Разработка:
+        Belhlo Разработка:
         </div>
         <div className="mainSozdContentVacancyFooterTextImg">
           <img
