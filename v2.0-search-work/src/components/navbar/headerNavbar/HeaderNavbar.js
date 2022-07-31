@@ -88,7 +88,7 @@ function HeaderNavbar() {
           <MenuOutlinedIcon />
           </Button>
           <h3>
-            <Link to="/">Название</Link>
+            <Link to="/">Belhlo</Link>
           </h3>
         </div>
 

@@ -1,12 +1,13 @@
 import "./popularityVacancies.css";
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function PopularityVacancies() {
   return (
     <div className="popularityVacanciesMain">
       <div className="popularityVacanciesTittle">
         <h6>Вакансии в вашем городе</h6>
-        <button>Все вакансии</button>
+        <button><Link to="/search/vacancy">Все вакансии</Link></button>
       </div>
 
       <hr />

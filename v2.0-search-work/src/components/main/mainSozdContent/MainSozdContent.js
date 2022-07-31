@@ -1,19 +1,24 @@
-import { useEffect } from "react";
+import { Button } from "@mui/material";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchVacancy } from "../../feauters/searchVacanciSlice";
 import "./mainSozdContent.css";
+import MainSozdContentGetResume from "./mainSozdContentGetResume/mainSozdContentGetResume";
 
 export default function MainSozdContent() {
   const dispatch = useDispatch();
 
   const vacancy = useSelector((state) => state.search.vacancy);
+  const [vacancyLength, setVacancyLength] = useState(8);
+  const [vacancyOrResume, setVacancyOrResume] = useState(true)
 
   useEffect(() => {
     dispatch(fetchVacancy());
   }, [dispatch]);
 
-  const handleCklick = () => {
+  const handleClick = () => {
+    setVacancyLength(vacancyLength + 4);
   };
 
   return (
@@ -44,14 +49,16 @@ export default function MainSozdContent() {
         </div>
       </div>
 
+      <div className="mainSozdContentVacancyOrResume">
+          <Button variant="contained">Список вакансий</Button>
+          <Button variant="contained">Список резюме</Button>
+      </div>
+
+        {(vacancyOrResume) ? 
       <div className="mainSozdContentVacancyCard">
-        {vacancy.map((item, id) => {
+        {vacancy.slice(0, vacancyLength).map((item, id) => {
           return (
-            <div
-              key={id}
-              className="mainSozdContentVacancyCard-OneVacancy"
-              onClick={handleCklick}
-            >
+            <div key={id} className="mainSozdContentVacancyCard-OneVacancy">
               <div className="mainSozdContentVacancyCard-Tittle">
                 <div className="mainSozdContentVacancyCard-Company">
                   {item.company}
@@ -61,8 +68,8 @@ export default function MainSozdContent() {
                 </div>
               </div>
               <div className="mainSozdContentVacancyCard-Name">
-                  <Link to={`/viewVacancy/${item._id}`}>{item.name}</Link>
-                  </div>
+                <Link to={`/viewVacancy/${item._id}`}>{item.name}</Link>
+              </div>
               <div className="mainSozdContentVacancyCard-Salary">
                 <div className="mainSozdContentVacancyCard-Salary-Btn">
                   От {item.salary}p<button>otclick</button>
@@ -72,9 +79,10 @@ export default function MainSozdContent() {
           );
         })}
       </div>
+       : <MainSozdContentGetResume />}
 
       <div className="mainSozdContentVacancyCardBtn">
-        <button>Больше вакансий</button>
+        <button onClick={handleClick}>Больше вакансий</button>
       </div>
 
       <div className="mainSozdContentVacancyFooterText">

@@ -58,6 +58,14 @@
   text-align: center;
 }
 
+.mainSozdContentVacancyOrResume {
+    display: flex;
+    justify-content: center;
+}
+.mainSozdContentVacancyOrResume button {
+    margin: 40px;
+}
+
 
 .mainSozdContentVacancyCard {
     display: flex;
@@ -76,6 +84,11 @@
     box-shadow: 0 5px 15px 0 rgba(0,0,0,0.2);
     transition-duration: 0.3s;
 }
+.mainSozdContentVacancyCard-OneVacancy a {
+    text-decoration: none;
+    font-weight: 800;
+    color: black;
+}
 .mainSozdContentVacancyCard-OneVacancy:hover {
     width: 22.1%;
     height: 171px;
@@ -91,7 +104,6 @@
     display: flex;
     justify-content: space-around;
     font-size: 15px;
-    font-weight: 600;
     color: rgba(95, 92, 92, 0.796);
     height: 35%;
 }
