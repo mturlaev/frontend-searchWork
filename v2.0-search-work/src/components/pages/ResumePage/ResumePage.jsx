@@ -26,6 +26,7 @@ const ResumePage = () => {
   const searchStack = stack.filter((item) =>
     item.name.toLowerCase().includes(text.toLowerCase())
   );
+
   // console.log(searchStack)
 
   useEffect(() => {

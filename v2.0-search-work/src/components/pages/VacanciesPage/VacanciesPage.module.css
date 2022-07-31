@@ -1,0 +1,29 @@
+.headerNavbarMain {
+    width: 100%;
+    height: 70px; 
+    display: flex;
+    justify-content: center;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/002/256/477/original/stock-and-graph-design-background-business-graph-banner-design-eps10-illustration-free-vector.jpg);
+    background-size: cover;
+    padding: 1%;
+       
+}
+
+form {
+    width: 60%;
+    display:flex ;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.searchBtn {
+    border: none;
+    /* border-radius: 7px; */
+}
+input {
+    /* border-radius: 5px; */
+    border: none;
+    width: 100%;
+}

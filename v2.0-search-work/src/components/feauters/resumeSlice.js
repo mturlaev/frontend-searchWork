@@ -2,7 +2,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { useSelector } from "react-redux";
 
 
-export const fetchCategory = createAsyncThunk("category/fetch", async (_, thunkAPI) => {
+export const fetchCategory = createAsyncThunk("category/fetch", 
+async (_, thunkAPI) => {
   try {
     const res = await fetch("http://localhost:4000/category");
     const data = await res.json()
@@ -12,6 +13,17 @@ export const fetchCategory = createAsyncThunk("category/fetch", async (_, thunkA
   }
 });
 
+
+// export const fetchVacancies = createAsyncThunk(
+// "vacancies", async(_, thunkAPI) => {
+//   try {
+//     const res = await fetch("http://localhost:4000/category");
+//     const data = await res.json()
+//     return data
+//   } catch (error) {
+//     thunkAPI.rejectWithValue(error.message)
+//   }
+// });
 
 export const patchResume = createAsyncThunk("resume/path", async (_, thunkAPI) => {
   try {
@@ -35,8 +47,7 @@ export const patchResume = createAsyncThunk("resume/path", async (_, thunkAPI) =
 })
 
 export const postResume = createAsyncThunk("resume/post", async ({img, name, surName, age, phone, email, city, position, experience}, thunkAPI) => {
-  const state = thunkAPI.getState()  
-
+  const state = thunkAPI.getState() 
   try {
       const formData = new FormData()
       console.log(img)
