@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchVacancy } from "../../feauters/searchVacanciSlice";
+import HeaderNavbar from "../../navbar/headerNavbar/HeaderNavbar";
 import SearchPage from "../SearchWorkPage/SearchPage";
 import styles from "./viewVacancy.module.css";
 
@@ -19,8 +20,10 @@ const ViewVacancyPage = () => {
   }, [dispatch]);
 
   // const [banan, setBanan] = useState("");
-
+//fasd
   return (
+    <>
+    <HeaderNavbar />
     <div className={styles.mainCard}>
       {vacancу.map((item) => {
         if (item._id === id) {
@@ -36,6 +39,7 @@ const ViewVacancyPage = () => {
         }
       })}
     </div>
+    </>
   );
 };
 
