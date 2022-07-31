@@ -52,6 +52,7 @@ function HeaderNavbar() {
 
 
 
+
   // const handleSearch = (text) => {
   //   navigate("/search/vacancy");
   // };

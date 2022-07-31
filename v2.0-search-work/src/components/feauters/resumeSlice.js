@@ -10,7 +10,7 @@ export const fetchCategory = createAsyncThunk("category/fetch", async (_, thunkA
   } catch (error) {
     thunkAPI.rejectWithValue(error.message)
   }
-})
+});
 
 export const postResume = createAsyncThunk("/resume/post", async ({img, name, surName, age, phone, email, city, category, position, experience}, thunkAPI) => {
   const state = thunkAPI.getState();
@@ -40,8 +40,19 @@ export const postResume = createAsyncThunk("/resume/post", async ({img, name, su
     } catch (error) {
       thunkAPI.rejectWithValue(error.message)
     }
-});
-
+  });
+  
+  export const fetchResume = createAsyncThunk(
+    "resume/fetch", async (_, thunkAPI) => {
+      try {
+        const res = await fetch("http://localhost:4000/resume");
+        const data = await res.json();
+        return data
+      } catch (error) {
+        thunkAPI.rejectWithValue(error.message)
+      }
+    }
+    );
 
 export const resumeSlice = createSlice({
   name: "resume",
@@ -62,7 +73,12 @@ export const resumeSlice = createSlice({
       state.stack = action.payload
       state.loading = false
     })
+    .addCase(fetchResume.fulfilled, (state, action) => {
+      state.resume = action.payload
+      state.loading = false
+    })
   },
 });
+
 
 export default resumeSlice.reducer
