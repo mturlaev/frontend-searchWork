@@ -80,3 +80,8 @@ hr {
     background: navy;
     padding: 1% 4.5%;
 }
+.btnVacancies a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+}
