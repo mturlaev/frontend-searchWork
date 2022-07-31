@@ -37,10 +37,12 @@ function HeaderNavbar() {
   };
 
 
-  // console.log(vacancy)
+  // console.log(vacancy )
 
   const arr = vacancy?.filter((element) =>
     element.name.toLowerCase().includes(text.toLowerCase())
+  
+    
   );
   console.log(arr);
 
@@ -56,7 +58,7 @@ function HeaderNavbar() {
   //   navigate("/search/vacancy");
   // };
   // console.log(window.location.href);
-  const handleClick = () => {};
+  
 
 
   const handleLogoutClick = () => {
