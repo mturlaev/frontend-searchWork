@@ -7,7 +7,7 @@ export default function PopularityVacancies() {
     <div className="popularityVacanciesMain">
       <div className="popularityVacanciesTittle">
         <h6>Вакансии в вашем городе</h6>
-        <button><Link to="/search/vacancy">Все вакансии</Link></button>
+        <button className="btnVacancies"><Link to="/search/vacancy">Все вакансии</Link></button>
       </div>
 
       <hr />

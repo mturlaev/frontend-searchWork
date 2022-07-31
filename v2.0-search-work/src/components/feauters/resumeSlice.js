@@ -62,11 +62,9 @@ export const postResume = createAsyncThunk("resume/post", async ({img, name, sur
       formData.append('experience', experience)
 
       console.log({img, name, surName, age, phone, email, city, position, experience})
-
-      const res = await fetch("http://localhost:4000/resume", {
+        const res = await fetch("http://localhost:4000/resume", {
         method: "POST",
-        headers: { "Content-type": "application/json",
-        Authorization: `Bearer ${state.user.token}` 
+        headers: { "Content-type": "application/json"
       },
         body: formData
       });

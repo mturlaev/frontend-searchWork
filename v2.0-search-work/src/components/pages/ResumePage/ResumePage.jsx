@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCategory, patchResume, postResume } from "../../feauters/resumeSlice";
 import "./ResumePage.css";
 
+
 const ResumePage = () => {
   const [img, setImg] = useState(null);
   const [avatar, setAvatar] = useState(null);
@@ -58,7 +59,7 @@ const ResumePage = () => {
         position,
         experience,
       }),
-      patchResume({category})
+      // patchResume({category})
     );
     console.log(category);
     // setImg("");
