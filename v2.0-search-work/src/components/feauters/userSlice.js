@@ -47,6 +47,8 @@ export const login = createAsyncThunk(
         return thunkAPI.rejectWithValue(data.message);
       } else {
         localStorage.setItem("isActivated", data?.user?.isActivated);
+        localStorage.setItem("user", data.user.id);
+        console.log(data)
         localStorage.setItem("token", data.accessToken);
         return thunkAPI.fulfillWithValue(data);
       }
@@ -87,8 +89,9 @@ export const userSlice = createSlice({
         state.error = null;
         state.token = action.payload.accessToken;
         state.isActivated = action.payload.user.isActivated;
-        state.user = action.payload.user;
-        state.email = action.payload.email;
+        state.user = action.payload.user.id;
+        console.log(action.payload.user.id)
+        state.email = action.payload.user.email;
       })
       .addCase(login.rejected, (state, action) => {
         state.signingIn = false;

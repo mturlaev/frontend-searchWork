@@ -41,7 +41,6 @@ const SignIn = () => {
 
   return (
     <div className={style.container}>
-      <div className={style.imgDiv}></div>
       <div className={style.signInUp}>
         <form className={style.authForm} onSubmit={(e) => handleSubmit(e)}>
           <h3 className={style.auth}>Авторизация</h3>

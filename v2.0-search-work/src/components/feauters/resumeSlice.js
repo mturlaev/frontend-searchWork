@@ -14,16 +14,16 @@ async (_, thunkAPI) => {
 });
 
 
-// export const fetchVacancies = createAsyncThunk(
-// "vacancies", async(_, thunkAPI) => {
-//   try {
-//     const res = await fetch("http://localhost:4000/category");
-//     const data = await res.json()
-//     return data
-//   } catch (error) {
-//     thunkAPI.rejectWithValue(error.message)
-//   }
-// });
+export const fetchVacancies = createAsyncThunk(
+"vacancies", async(_, thunkAPI) => {
+  try {
+    const res = await fetch("http://localhost:4000/category");
+    const data = await res.json()
+    return data
+  } catch (error) {
+    thunkAPI.rejectWithValue(error.message)
+  }
+});
 
 export const patchResume = createAsyncThunk("resume/path", async (_, thunkAPI) => {
   try {
