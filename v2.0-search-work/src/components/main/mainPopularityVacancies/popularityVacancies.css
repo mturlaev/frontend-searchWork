@@ -39,6 +39,8 @@ hr {
     width: 30%;
     padding: 2%;
     font-size: 20px;
+    border-radius: 8px;
+    background: rgba(0, 0, 128, 0.054);
 }
 .oneVacancy img {
     width: 50px;

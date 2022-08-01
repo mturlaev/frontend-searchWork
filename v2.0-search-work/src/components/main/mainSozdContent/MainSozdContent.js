@@ -21,6 +21,14 @@ export default function MainSozdContent() {
     setVacancyLength(vacancyLength + 4);
   };
 
+  const handleClickVacancyCard = () => {
+      setVacancyOrResume(true)
+  }
+
+  const handleClickResumeCard = () => {
+    setVacancyOrResume(false)
+}
+
   return (
     <div className="mainSozdContentContainer">
       <div className="mainSozdContentTittle">
@@ -50,8 +58,8 @@ export default function MainSozdContent() {
       </div>
 
       <div className="mainSozdContentVacancyOrResume">
-          <Button variant="contained">Список вакансий</Button>
-          <Button variant="contained">Список резюме</Button>
+          <Button variant="contained" onClick={handleClickVacancyCard}>Список вакансий</Button>
+          <Button variant="contained" onClick={handleClickResumeCard}>Список резюме</Button>
       </div>
 
         {(vacancyOrResume) ? 
@@ -82,7 +90,7 @@ export default function MainSozdContent() {
        : <MainSozdContentGetResume />}
 
       <div className="mainSozdContentVacancyCardBtn">
-        <button onClick={handleClick}>Больше вакансий</button>
+        <button onClick={handleClick}>Показать больше</button>
       </div>
 
       <div className="mainSozdContentVacancyFooterText">

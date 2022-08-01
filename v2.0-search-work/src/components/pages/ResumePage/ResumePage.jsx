@@ -4,6 +4,9 @@ import logo from "../../images/logo.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCategory, patchResume, postResume } from "../../feauters/resumeSlice";
 import "./ResumePage.css";
+import ResumePageSelect from "./resumePageSelect/ResumePageSelect";
+import MultipleSelect from "./resumePageSelect/ResumePageSelect";
+import HeaderNavbar from "../../navbar/headerNavbar/HeaderNavbar";
 
 
 const ResumePage = () => {
@@ -142,6 +145,8 @@ const ResumePage = () => {
   };
 
   return (
+    <>
+    <HeaderNavbar />
     <div className="resumeBigMain">
       <div className="resumeMain">
         <h1 className="h1nishe">Составить резюме</h1>
@@ -292,6 +297,7 @@ const ResumePage = () => {
         </div>
 
         <div>
+        <MultipleSelect />
           {searchStack.map((item, index) => {
             return (
               <div className="stackList" key={index}>
@@ -304,6 +310,7 @@ const ResumePage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
