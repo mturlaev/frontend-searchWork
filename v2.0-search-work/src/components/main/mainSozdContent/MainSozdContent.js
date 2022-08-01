@@ -2,16 +2,18 @@ import { Button } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchVacancy } from "../../feauters/searchVacanciSlice";
+import { addResponse, fetchVacancy } from "../../feauters/searchVacanciSlice";
 import "./mainSozdContent.css";
 import MainSozdContentGetResume from "./mainSozdContentGetResume/mainSozdContentGetResume";
 
 export default function MainSozdContent() {
   const dispatch = useDispatch();
 
+  const user = useSelector((state) => state.user.user);
+
   const vacancy = useSelector((state) => state.search.vacancy);
   const [vacancyLength, setVacancyLength] = useState(8);
-  const [vacancyOrResume, setVacancyOrResume] = useState(true);
+  const [vacancyOrResume, setVacancyOrResume] = useState(true)
 
   useEffect(() => {
     dispatch(fetchVacancy());
@@ -22,12 +24,18 @@ export default function MainSozdContent() {
   };
 
   const handleClickVacancyCard = () => {
-    setVacancyOrResume(true);
-  };
+      setVacancyOrResume(true)
+  }
 
   const handleClickResumeCard = () => {
-    setVacancyOrResume(false);
-  };
+    setVacancyOrResume(false)
+}
+
+const addResponseOnVacancy = (id) => {
+  // if(user  === resume.userId){
+  dispatch(addResponse({id}))
+  // }
+}
 
   return (
     <div className="mainSozdContentContainer">
@@ -58,42 +66,57 @@ export default function MainSozdContent() {
       </div>
 
       <div className="mainSozdContentVacancyOrResume">
-        <Button variant="contained" onClick={handleClickVacancyCard}>
-          Список вакансий
-        </Button>
-        <Button variant="contained" onClick={handleClickResumeCard}>
-          Список резюме
-        </Button>
+          <Button variant="contained" onClick={handleClickVacancyCard}>Список вакансий</Button>
+          <Button variant="contained" onClick={handleClickResumeCard}>Список резюме</Button>
       </div>
 
-      {vacancyOrResume ? (
-        <div className="mainSozdContentVacancyCard">
-          {vacancy.slice(0, vacancyLength).map((item, id) => {
-            return (
-              <div key={id} className="mainSozdContentVacancyCard-OneVacancy">
-                <div className="mainSozdContentVacancyCard-Tittle">
-                  <div className="mainSozdContentVacancyCard-Company">
-                    {item.company}
-                  </div>
-                  <div className="mainSozdContentVacancyCard-City">
-                    {item.city}
-                  </div>
+        {(vacancyOrResume) ? 
+      <div className="mainSozdContentVacancyCard">
+        {vacancy.slice(0, vacancyLength).map((item, id) => {
+                    const checked = item.responses.find((item) => item === user);
+
+          return (
+            <div key={id} className="mainSozdContentVacancyCard-OneVacancy">
+              <div className="mainSozdContentVacancyCard-Tittle">
+                <div className="mainSozdContentVacancyCard-Company">
+                  {item.company}
                 </div>
-                <div className="mainSozdContentVacancyCard-Name">
-                  <Link to={`/viewVacancy/${item._id}`}>{item.name}</Link>
-                </div>
-                <div className="mainSozdContentVacancyCard-Salary">
-                  <div className="mainSozdContentVacancyCard-Salary-Btn">
-                    От {item.salary}p<button>otclick</button>
-                  </div>
+                <div className="mainSozdContentVacancyCard-City">
+                  {item.city}
                 </div>
               </div>
-            );
-          })}
-        </div>
-      ) : (
-        <MainSozdContentGetResume />
-      )}
+              <div className="mainSozdContentVacancyCard-Name">
+                <Link to={`/viewVacancy/${item._id}`}>{item.name}</Link>
+              </div>
+              <div className="mainSozdContentVacancyCard-Salary">
+                <div className="mainSozdContentVacancyCard-Salary-Btn">
+                  От {item.salary}p   <div>
+                {!checked ? (
+                  <button
+                    className="otclickBtn"
+                    onClick={() =>
+                      addResponseOnVacancy(item._id, item.checked)
+                    }
+                  >
+                    откликнуться
+                  </button>
+                ) : (
+                  <button
+                    disabled={checked}
+                    className="otclickBtn2"
+                    onClick={() => addResponseOnVacancy(item._id)}
+                  >
+                    Вы откликнулись
+                  </button>
+                )}
+              </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+       : <MainSozdContentGetResume />}
 
       <div className="mainSozdContentVacancyCardBtn">
         <button onClick={handleClick}>Показать больше</button>
@@ -101,7 +124,7 @@ export default function MainSozdContent() {
 
       <div className="mainSozdContentVacancyFooterText">
         <div className="mainSozdContentVacancyFooterTextTittle">
-          Belhlo Разработка:
+        Belhlo Разработка:
         </div>
         <div className="mainSozdContentVacancyFooterTextImg">
           <img

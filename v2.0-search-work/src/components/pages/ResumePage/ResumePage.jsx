@@ -261,16 +261,7 @@ const ResumePage = () => {
               onChange={(e) => handlePositionChange(e)}
             />
           </div>
-          <div className="inputText">
-            Ваш Stack
-            <input
-              className="inputTexts"
-              type="text"
-              value={text}
-              placeholder="Ваши умения"
-              onChange={(e) => handleSearchStack(e)}
-            />
-          </div>
+       
           <div className="StackFetch">
             {category.map((item, id) => {
               return (
@@ -298,15 +289,7 @@ const ResumePage = () => {
 
         <div>
         <MultipleSelect />
-          {searchStack.map((item, index) => {
-            return (
-              <div className="stackList" key={index}>
-                <button onClick={() => handlePush(item, index)}>
-                  {item.name}
-                </button>
-              </div>
-            );
-          })}
+     
         </div>
       </div>
     </div>
