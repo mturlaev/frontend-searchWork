@@ -11,7 +11,7 @@ export default function MainSozdContent() {
 
   const vacancy = useSelector((state) => state.search.vacancy);
   const [vacancyLength, setVacancyLength] = useState(8);
-  const [vacancyOrResume, setVacancyOrResume] = useState(true)
+  const [vacancyOrResume, setVacancyOrResume] = useState(true);
 
   useEffect(() => {
     dispatch(fetchVacancy());
@@ -22,12 +22,12 @@ export default function MainSozdContent() {
   };
 
   const handleClickVacancyCard = () => {
-      setVacancyOrResume(true)
-  }
+    setVacancyOrResume(true);
+  };
 
   const handleClickResumeCard = () => {
-    setVacancyOrResume(false)
-}
+    setVacancyOrResume(false);
+  };
 
   return (
     <div className="mainSozdContentContainer">
@@ -58,36 +58,42 @@ export default function MainSozdContent() {
       </div>
 
       <div className="mainSozdContentVacancyOrResume">
-          <Button variant="contained" onClick={handleClickVacancyCard}>Список вакансий</Button>
-          <Button variant="contained" onClick={handleClickResumeCard}>Список резюме</Button>
+        <Button variant="contained" onClick={handleClickVacancyCard}>
+          Список вакансий
+        </Button>
+        <Button variant="contained" onClick={handleClickResumeCard}>
+          Список резюме
+        </Button>
       </div>
 
-        {(vacancyOrResume) ? 
-      <div className="mainSozdContentVacancyCard">
-        {vacancy.slice(0, vacancyLength).map((item, id) => {
-          return (
-            <div key={id} className="mainSozdContentVacancyCard-OneVacancy">
-              <div className="mainSozdContentVacancyCard-Tittle">
-                <div className="mainSozdContentVacancyCard-Company">
-                  {item.company}
+      {vacancyOrResume ? (
+        <div className="mainSozdContentVacancyCard">
+          {vacancy.slice(0, vacancyLength).map((item, id) => {
+            return (
+              <div key={id} className="mainSozdContentVacancyCard-OneVacancy">
+                <div className="mainSozdContentVacancyCard-Tittle">
+                  <div className="mainSozdContentVacancyCard-Company">
+                    {item.company}
+                  </div>
+                  <div className="mainSozdContentVacancyCard-City">
+                    {item.city}
+                  </div>
                 </div>
-                <div className="mainSozdContentVacancyCard-City">
-                  {item.city}
+                <div className="mainSozdContentVacancyCard-Name">
+                  <Link to={`/viewVacancy/${item._id}`}>{item.name}</Link>
+                </div>
+                <div className="mainSozdContentVacancyCard-Salary">
+                  <div className="mainSozdContentVacancyCard-Salary-Btn">
+                    От {item.salary}p<button>otclick</button>
+                  </div>
                 </div>
               </div>
-              <div className="mainSozdContentVacancyCard-Name">
-                <Link to={`/viewVacancy/${item._id}`}>{item.name}</Link>
-              </div>
-              <div className="mainSozdContentVacancyCard-Salary">
-                <div className="mainSozdContentVacancyCard-Salary-Btn">
-                  От {item.salary}p<button>otclick</button>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-       : <MainSozdContentGetResume />}
+            );
+          })}
+        </div>
+      ) : (
+        <MainSozdContentGetResume />
+      )}
 
       <div className="mainSozdContentVacancyCardBtn">
         <button onClick={handleClick}>Показать больше</button>
@@ -95,7 +101,7 @@ export default function MainSozdContent() {
 
       <div className="mainSozdContentVacancyFooterText">
         <div className="mainSozdContentVacancyFooterTextTittle">
-        Belhlo Разработка:
+          Belhlo Разработка:
         </div>
         <div className="mainSozdContentVacancyFooterTextImg">
           <img
