@@ -36,7 +36,10 @@
   border-radius: 5px;
   border: 2px solid gray;
   margin: 20px auto;
-
+}
+.authForm .email {
+  padding: 0 10px;
+  outline: none;
 }
 
 .password {
@@ -48,14 +51,18 @@
   height: 50px;
   margin: 20px auto;
 }
+.authForm .password {
+  padding: 0 10px;
+  outline: none;
+}
 
-.password:hover {
+/* .password:hover {
   border: 2px solid black;
 }
 
 .email:hover {
   border: 2px solid black;
-}
+} */
 
 
 .signInUpBtn {

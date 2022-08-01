@@ -10,6 +10,7 @@ import PreSignIn from "../RegAuth/PreSignIn";
 import SignIn from "../RegAuth/SignIn";
 import SignUp from "../RegAuth/SignUp";
 import ViewVacancyPage from "../pages/viewVacancy/viewVacancyPage"
+import AdminCabinetPage from "../pages/AdminCabinet/AdminCabinetPage";
 
 
 const MainRoute = () => {
@@ -24,6 +25,7 @@ const MainRoute = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/signIn" element={<SignIn />} />
         <Route path="/signUp" element={<SignUp />} />
+        <Route path="/admin" element={<AdminCabinetPage/>} />
 
         <Route path="/preSign" element={<PreSignIn />} />
         <Route path="/viewVacancy/:id" element={<ViewVacancyPage />} />

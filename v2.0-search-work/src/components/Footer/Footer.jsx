@@ -16,6 +16,7 @@ const Footer = () => {
                 <h5>Работадателям</h5>
                 <div className='footerText'><Link to="/vacancy">Разместить вакансию</Link></div>
                 <div className='footerText'><Link to="/catalog/vacancies">Поиск сотрудника</Link></div>
+                <div className='footerText'><Link to="/admin">Личный Кабинет</Link></div>
             </div>
             <div className='lorem'>
                 <h5>Партнерам</h5>

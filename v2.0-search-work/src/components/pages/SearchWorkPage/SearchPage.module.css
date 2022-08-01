@@ -28,6 +28,7 @@
     border-radius: 8px;
     color: white;
     padding: 5px 5px;
+    cursor: not-allowed
 }
 .otclickBtn2:hover{
     background-color: #19e619;

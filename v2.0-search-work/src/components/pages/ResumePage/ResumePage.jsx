@@ -58,9 +58,11 @@ const ResumePage = () => {
         city,
         position,
         experience,
+        category
       }),
       // patchResume({category})
-    );
+      );
+      // dispatch(patchResume({}))
     console.log(category);
     // setImg("");
     // setName("");
@@ -293,7 +295,7 @@ const ResumePage = () => {
           {searchStack.map((item, index) => {
             return (
               <div className="stackList" key={index}>
-                <button onClick={() => handlePush(item._id, index)}>
+                <button onClick={() => handlePush(item, index)}>
                   {item.name}
                 </button>
               </div>
