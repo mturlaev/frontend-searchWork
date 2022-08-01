@@ -2,13 +2,13 @@ import { useDispatch, useSelector } from "react-redux";
 import styles from "./SearchPage.module.css";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { fetchResponse, patchVacancies, postResponses } from "../../feauters/searchVacanciSlice";
+import { addResponse, fetchResponse, patchVacancies, postResponses } from "../../feauters/searchVacanciSlice";
 import { useState } from "react";
 
 
 const SearchPage = ({arr}) => {
-
-
+  const resume = useSelector(state => state.resume.resume)
+  const user = useSelector(state => state.user.user)
 const response = useSelector(state => state.search.response);
 // const checked = useSelector(state => state.search.checked)
 const dispatch = useDispatch()
@@ -20,10 +20,10 @@ const dispatch = useDispatch()
 //   )
 // })
 
-const addResponse = (element, checked) => {
-  dispatch(postResponses({element, checked}))
-  dispatch(patchVacancies({element, checked}))
-  
+const addResponseOnVacancy = (id) => {
+  // if(user  === resume.userId){
+  dispatch(addResponse({id}))
+  // }
 }
 
 
@@ -37,6 +37,7 @@ useEffect(() => {
       </div>
       <div className={styles.cardVacancy}>
         {arr.map((element, id) => {
+          const checked = element.responses.find(item => item === user)
           return( 
             <div key={id} className={styles.cardListVacancy}>
               <h4><Link to={`/viewVacancy/${element._id}`}>{element.name}</Link></h4>
@@ -45,8 +46,8 @@ useEffect(() => {
               <h5>{element.city}</h5>
               <div>{element.text.slice(0, 166) + "..."}</div>
               <hr/>
-              <div>{!element.checked ? <button className={styles.otclickBtn} onClick={() => addResponse(element._id, element.checked)}>откликнуться</button>
-              : <button className={styles.otclickBtn2} onClick={() => addResponse(element._id, element.checked)}>Вы откликнулись</button>}</div>
+              <div>{!checked ? <button className={styles.otclickBtn} onClick={() => addResponseOnVacancy(element._id, element.checked)}>откликнуться</button>
+              : <button disabled={checked} className={styles.otclickBtn2} onClick={() => addResponseOnVacancy(element._id)}>Вы откликнулись</button>}</div>
             </div>
           )
           ;

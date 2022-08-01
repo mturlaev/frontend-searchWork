@@ -43,6 +43,8 @@
 .mainBox-navbarMain input {
     width: 100%;
     border: none;
+    padding: 0 10px;
+    outline: none;
 }
 .mainBox-navbarMain button {
     width: 15%;
