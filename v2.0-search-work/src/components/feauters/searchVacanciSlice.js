@@ -19,28 +19,29 @@ export const fetchVacancy = createAsyncThunk(
 
 export const addResponse = createAsyncThunk(
   "addResponse",
-  async ({id}, thunkApi) => {
+  async ({ id }, thunkApi) => {
     try {
-      const response = await fetch(`http://localhost:4000/vacancy/response/${id}`, {
-        method: 'PATCH',
-        headers: {
-          "Content-Type": "application/json;charset=utf-8",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-    })
+      const response = await fetch(
+        `http://localhost:4000/vacancy/response/${id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json;charset=utf-8",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       const data = await response.json();
       if (data.error) {
         return thunkApi.rejectWithValue(data.error);
       } else {
-        return thunkApi.fulfillWithValue({data, id});
+        return thunkApi.fulfillWithValue({ data, id });
       }
     } catch (error) {
       return thunkApi.rejectWithValue(error);
     }
   }
 );
-
-
 
 export const fetchResponse = createAsyncThunk(
   "response/fetch",
@@ -124,11 +125,13 @@ export const createVacancy = createAsyncThunk(
     { positionText, salaryText, companyText, cityText, descriptionText },
     thunkApi
   ) => {
+    const state = thunkApi.getState();
     try {
       const vacancy = await fetch("http://localhost:4000/vacancy", {
         method: "POST",
         headers: {
-          "content-type": "application/json",
+          "Content-Type": "application/json;charset=utf-8",
+          Authorization: `Bearer ${state.user.token}`,
         },
         body: JSON.stringify({
           name: positionText,
@@ -210,31 +213,28 @@ export const searchVacanciSlice = createSlice({
         state.checked = !state.checked;
       });
 
-      builder
-      .addCase(addResponse.fulfilled, (state, action) => {
-        state.vacancy = state.vacancy.map(item => {
-          if (item._id === action.payload.id) {
-            
-            return action.payload.data
-          }
-          return item
-        })
-        state.loading = false;
-        state.error = action.payload;
-      })
-      // .addCase(addResponse.pending, (state, action) => {
-      //   state.response = action.payload;
-      //   state.checked = !state.checked;
-      //   state.error = action.payload;
-      // })
-      // .addCase(addResponse.rejected, (state, action) => {
-      //   state.vacancy = action.payload;
-      //   state.error = action.payload;
-      //   state.loading = false;
-      //   state.checked = !state.checked;
-      // });
+    builder.addCase(addResponse.fulfilled, (state, action) => {
+      state.vacancy = state.vacancy.map((item) => {
+        if (item._id === action.payload.id) {
+          return action.payload.data;
+        }
+        return item;
+      });
+      state.loading = false;
+      state.error = action.payload;
+    });
+    // .addCase(addResponse.pending, (state, action) => {
+    //   state.response = action.payload;
+    //   state.checked = !state.checked;
+    //   state.error = action.payload;
+    // })
+    // .addCase(addResponse.rejected, (state, action) => {
+    //   state.vacancy = action.payload;
+    //   state.error = action.payload;
+    //   state.loading = false;
+    //   state.checked = !state.checked;
+    // });
   },
-  
 });
 
 export default searchVacanciSlice.reducer;

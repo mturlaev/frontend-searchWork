@@ -101,6 +101,7 @@ background-color: #0d5fb0;
     display: flex;
     justify-content: space-around;
     margin-top: 25px;
+    margin-bottom: 30px;
 }
 .text-foto{
     font-family: system-ui;
