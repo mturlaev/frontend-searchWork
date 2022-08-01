@@ -1,5 +1,4 @@
 .mainSozdContentContainer {
-
 }
 
 .mainSozdContentTittle {
@@ -15,15 +14,14 @@
 }
 
 .tittleText {
-
 }
 .tittleText h1 {
-    font-size: 50px;
-    color: rgba(255, 255, 255, 0.777);
+  font-size: 50px;
+  color: rgba(255, 255, 255, 0.777);
 }
 .tittleText h3 {
-    font-size: 50px;
-    color: rgba(255, 255, 255, 0.576);
+  font-size: 50px;
+  color: rgba(255, 255, 255, 0.576);
 }
 
 .mainSozdContentText {
@@ -36,7 +34,7 @@
 .mainSozdContentText h3 {
   color: rgba(0, 0, 0, 0.722);
   font-size: 20px;
-  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .mainSozdContentTextResume {
@@ -60,146 +58,144 @@
 }
 
 .mainSozdContentVacancyOrResume {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 .mainSozdContentVacancyOrResume button {
-    margin: 40px;
+  margin: 40px;
 }
 
-
 .mainSozdContentVacancyCard {
-    display: flex;
-    flex-wrap: wrap;
-    background: whitesmoke;
-    border-radius: 7px;
+  display: flex;
+  flex-wrap: wrap;
+  background: whitesmoke;
+  border-radius: 7px;
+  justify-content: center;
 }
 
 .mainSozdContentVacancyCard-OneVacancy {
-    width: 22%;
-    height: 170px;
-    margin: 1%;
-    padding: 1%;
-    border-radius: 15px;
-    background: white;
-    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.2);
-    transition-duration: 0.3s;
+  width: 22%;
+  height: 40vh;
+  margin: 1%;
+  padding: 1%;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
+  transition-duration: 0.3s;
 }
 .mainSozdContentVacancyCard-OneVacancy a {
-    text-decoration: none;
-    font-weight: 800;
-    color: black;
+  text-decoration: none;
+  font-weight: 800;
+  color: black;
 }
 .mainSozdContentVacancyCard-OneVacancy:hover {
-    width: 22.1%;
-    height: 171px;
-    margin: 1%;
-    padding: 1%;
-    border-radius: 15px;
-    background: white;
-    box-shadow: 0 10px 30px 0 rgba(0,0,0,0.2);
-    transition-duration: 0.3s;
+  width: 22.1%;
+  margin: 1%;
+  padding: 1%;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.2);
+  transition-duration: 0.3s;
 }
 
 .mainSozdContentVacancyCard-Tittle {
-    display: flex;
-    justify-content: space-around;
-    font-size: 15px;
-    color: rgba(95, 92, 92, 0.796);
-    height: 35%;
+  display: flex;
+  justify-content: space-around;
+  font-size: 15px;
+  color: rgba(95, 92, 92, 0.796);
+  height: 35%;
 }
 
 .mainSozdContentVacancyCard-Company {
-    text-align: center;
-    font-weight: 700;
-    color: black;
+  text-align: center;
+  font-weight: 700;
+  color: black;
 }
 
 .mainSozdContentVacancyCard-City {
-    text-align: center;
+  text-align: center;
 }
 
 .mainSozdContentVacancyCard-Name {
-    font-weight: 800;
-    font-size: 17.5px;
-    height: 50%;
-    margin: auto;
-    text-align: center;
+  font-weight: 800;
+  font-size: 17.5px;
+  height: 50%;
+  margin: auto;
+  text-align: center;
 }
 
 .mainSozdContentVacancyCard-Salary {
-    color: rgba(1, 168, 1, 0.736);
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  color: rgba(1, 168, 1, 0.736);
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .mainSozdContentVacancyCard-Salary-Btn {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 .mainSozdContentVacancyCard-Salary-Btn button {
-    border: none;
-    background: #1e8fffd0;
-    color: whitesmoke;
-    border-radius: 6px;
-    transition-duration: 0.3s;
+  border: none;
+  background: #1e8fffd0;
+  color: whitesmoke;
+  border-radius: 6px;
+  transition-duration: 0.3s;
 }
 .mainSozdContentVacancyCard-Salary-Btn button:hover {
-    border: none;
-    background: rgba(1, 168, 1, 0.736);
-    color: whitesmoke;
-    border-radius: 6px;
+  border: none;
+  background: rgba(1, 168, 1, 0.736);
+  color: whitesmoke;
+  border-radius: 6px;
 }
 
 .mainSozdContentVacancyCardBtn {
-    background: whitesmoke;
-    display: flex;
-    justify-content: center;
-    font-size: 18px;
-    font-family: system-ui;
-    padding-bottom: 3%;
+  background: whitesmoke;
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  font-family: system-ui;
+  padding-bottom: 3%;
 }
 .mainSozdContentVacancyCardBtn button {
-    border: none;
-    border-radius: 7px;
-    background: #5677fc;
-    color: white;
-    padding: 0.7% 2%;
-    margin-top: 2.5%;
+  border: none;
+  border-radius: 7px;
+  background: #5677fc;
+  color: white;
+  padding: 0.7% 2%;
+  margin-top: 2.5%;
 }
 .mainSozdContentVacancyCardBtn button:hover {
-    border: none;
-    border-radius: 7px;
-    background: #5677fcb9;
-    color: white;
-    padding: 0.7% 2%;
+  border: none;
+  border-radius: 7px;
+  background: #5677fcb9;
+  color: white;
+  padding: 0.7% 2%;
 }
 
 .mainSozdContentVacancyFooterText {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: gainsboro;
-    padding-bottom: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: gainsboro;
+  padding-bottom: 2%;
 }
 
 .mainSozdContentVacancyFooterTextTittle {
-    margin-top: 3%;
+  margin-top: 3%;
 }
 
 .mainSozdContentVacancyFooterTextImg {
-    margin-top: 1%;
-    display: flex;
-    gap: 3%
+  margin-top: 1%;
+  display: flex;
+  gap: 3%;
 }
 
 .mainSozdContentVacancyFooterTextImg img {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-
 .mainSozdContentVacancyOrResume {
-    background-color: whitesmoke;
+  background-color: whitesmoke;
 }

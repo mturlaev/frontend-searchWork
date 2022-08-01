@@ -33,11 +33,15 @@ hr {
     display: flex;
     flex-wrap: wrap;
     gap: 2%;
+    justify-content: center;
 }
 
 .oneVacancy {
     width: 30%;
     padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     font-size: 20px;
     border-radius: 8px;
     background: rgba(0, 0, 128, 0.054);
@@ -86,4 +90,25 @@ hr {
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
+}
+.otclickBtn{
+    border: none;
+    background-color: #1976d2;
+    border-radius: 8px;
+    color: whitesmoke;
+    padding: 5px 5px;
+}
+.otclickBtn:hover{
+    background-color: #0d5fb0;
+}
+.otclickBtn2{
+    border: none;
+    background-color: #7fff00;
+    border-radius: 8px;
+    color: white;
+    padding: 5px 5px;
+    cursor: not-allowed
+}
+.otclickBtn2:hover{
+    background-color: #19e619;
 }
