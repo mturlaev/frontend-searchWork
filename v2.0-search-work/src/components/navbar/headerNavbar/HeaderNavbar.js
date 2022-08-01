@@ -17,6 +17,7 @@ import { logout } from "../../feauters/userSlice";
 function HeaderNavbar() {
   const vacancy = useSelector((state) => state.search.vacancy);
   const searchText = useSelector((state) => state.search.searchText);
+  const email = useSelector((state) => state.user.email);
   const dispatch = useDispatch();
 
 
@@ -85,7 +86,8 @@ function HeaderNavbar() {
         <div className="leftBox-navbarMain">
           
           <Button>
-          <MenuOutlinedIcon />
+          <MenuOutlinedIcon  />
+          
           </Button>
           <h3>
             <Link to="/">Belhlo</Link>
@@ -105,7 +107,7 @@ function HeaderNavbar() {
         <div className="rightBox-navbarMain">
           <button onClick={handleClick}>8-800-555-35-35</button>
           <button onClick={handleClick}>？</button>
-          {token ? <button onClick={handleLogoutClick}>Выход</button> : <div><Link to="/signIn" path={<SignIn />}>
+          {token ? <><button onClick={handleLogoutClick}>Выход</button> <div className="email">{email}</div></> : <div><Link to="/signIn" path={<SignIn />}>
             <button>
             Вход
             </button>
