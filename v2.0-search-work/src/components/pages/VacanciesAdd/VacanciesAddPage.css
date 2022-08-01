@@ -1,13 +1,13 @@
 .vacanciesAddPageContainer {
     padding-top: 1%;
     background-image: url(https://static.vecteezy.com/system/resources/previews/002/256/477/original/stock-and-graph-design-background-business-graph-banner-design-eps10-illustration-free-vector.jpg);
+    padding-bottom: 5%;
 }
 
 .vacanciesAddPageMain {
-    background-image: url("https://img.freepik.com/free-photo/creative-flat-lay-design-of-workspace-desk-with-laptop-alarm-clock-blank-notebook-smartphone-and-stationery-with-copy-space-background_1150-45600.jpg?w=2000");
-    background-size: cover;
     margin-top: 1%;
     display: flex;
+    
 }
 .vacanciesAddPageMain input{
     width: 70%;
@@ -22,8 +22,11 @@
 }
 
 .vacanciesAddPage-RightContent {
+    background-image: url("https://img.freepik.com/free-photo/creative-flat-lay-design-of-workspace-desk-with-laptop-alarm-clock-blank-notebook-smartphone-and-stationery-with-copy-space-background_1150-45600.jpg?w=2000");
+    background-size: cover;
     width: 75%;
     margin: auto;
+    border-radius: 8px;
 }
 
 .vacanciesAddPage-RightContent h3 {
@@ -60,4 +63,5 @@
 .btnAddVacancy {
     display: flex;
     justify-content: center;
+    margin-bottom: 5%;
 }
