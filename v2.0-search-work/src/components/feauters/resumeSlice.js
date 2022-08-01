@@ -65,7 +65,7 @@ export const postResume = createAsyncThunk(
       city,
       position,
       experience,
-      category
+      category,
     },
     thunkAPI
   ) => {
@@ -78,7 +78,7 @@ export const postResume = createAsyncThunk(
       formData.append("name", name);
       formData.append("surname", surName);
       formData.append("age", age);
-      formData.append("phone", phone); 
+      formData.append("phone", phone);
       formData.append("email", email);
       formData.append("city", city);
       formData.append("position", position);
@@ -126,11 +126,144 @@ export const fetchResume = createAsyncThunk(
 export const resumeSlice = createSlice({
   name: "resume",
   initialState: {
-    resume: [],
+    resume: [
+      {
+        name: "1алаш",
+        surname: "Дудаев",
+        age: 32,
+        image:
+          "https://appdevcon.nl/wp-content/uploads/2020/03/ADVANTAGES-AND-DISADVANTAGES-OF-BEING-A-DEVELOPER-.jpeg",
+        phone: "7-928-123-45-67",
+        email: "1alash32@mail.ru",
+        city: "Moscow",
+        position: "Full-stack JS",
+        experience: 2,
+      },
+      {
+        name: "1алаш",
+        surname: "Дудаев",
+        age: 32,
+        image:
+          "https://appdevcon.nl/wp-content/uploads/2020/03/ADVANTAGES-AND-DISADVANTAGES-OF-BEING-A-DEVELOPER-.jpeg",
+        phone: "7-928-123-45-67",
+        email: "1alash32@mail.ru",
+        city: "Moscow",
+        position: "Full-stack JS",
+        experience: 2,
+      },
+      {
+        name: "1алаш",
+        surname: "Дудаев",
+        age: 32,
+        image:
+          "https://appdevcon.nl/wp-content/uploads/2020/03/ADVANTAGES-AND-DISADVANTAGES-OF-BEING-A-DEVELOPER-.jpeg",
+        phone: "7-928-123-45-67",
+        email: "1alash32@mail.ru",
+        city: "Moscow",
+        position: "Full-stack JS",
+        experience: 2,
+      },
+      {
+        name: "1алаш",
+        surname: "Дудаев",
+        age: 32,
+        image:
+          "https://appdevcon.nl/wp-content/uploads/2020/03/ADVANTAGES-AND-DISADVANTAGES-OF-BEING-A-DEVELOPER-.jpeg",
+        phone: "7-928-123-45-67",
+        email: "1alash32@mail.ru",
+        city: "Moscow",
+        position: "Full-stack JS",
+        experience: 2,
+      },
+      {
+        name: "1алаш",
+        surname: "Дудаев",
+        age: 32,
+        image:
+          "https://appdevcon.nl/wp-content/uploads/2020/03/ADVANTAGES-AND-DISADVANTAGES-OF-BEING-A-DEVELOPER-.jpeg",
+        phone: "7-928-123-45-67",
+        email: "1alash32@mail.ru",
+        city: "Moscow",
+        position: "Full-stack JS",
+        experience: 2,
+      },
+      {
+        name: "1алаш",
+        surname: "Дудаев",
+        age: 32,
+        image:
+          "https://appdevcon.nl/wp-content/uploads/2020/03/ADVANTAGES-AND-DISADVANTAGES-OF-BEING-A-DEVELOPER-.jpeg",
+        phone: "7-928-123-45-67",
+        email: "1alash32@mail.ru",
+        city: "Moscow",
+        position: "Full-stack JS",
+        experience: 2,
+      },
+      {
+        name: "1алаш",
+        surname: "Дудаев",
+        age: 32,
+        image:
+          "https://appdevcon.nl/wp-content/uploads/2020/03/ADVANTAGES-AND-DISADVANTAGES-OF-BEING-A-DEVELOPER-.jpeg",
+        phone: "7-928-123-45-67",
+        email: "1alash32@mail.ru",
+        city: "Moscow",
+        position: "Full-stack JS",
+        experience: 2,
+      },
+      {
+        name: "1алаш",
+        surname: "Дудаев",
+        age: 32,
+        image:
+          "https://appdevcon.nl/wp-content/uploads/2020/03/ADVANTAGES-AND-DISADVANTAGES-OF-BEING-A-DEVELOPER-.jpeg",
+        phone: "7-928-123-45-67",
+        email: "1alash32@mail.ru",
+        city: "Moscow",
+        position: "Full-stack JS",
+        experience: 2,
+      },
+      {
+        name: "1алаш",
+        surname: "Дудаев",
+        age: 32,
+        image:
+          "https://appdevcon.nl/wp-content/uploads/2020/03/ADVANTAGES-AND-DISADVANTAGES-OF-BEING-A-DEVELOPER-.jpeg",
+        phone: "7-928-123-45-67",
+        email: "1alash32@mail.ru",
+        city: "Moscow",
+        position: "Full-stack JS",
+        experience: 2,
+      },
+      {
+        name: "1алаш",
+        surname: "Дудаев",
+        age: 32,
+        image:
+          "https://appdevcon.nl/wp-content/uploads/2020/03/ADVANTAGES-AND-DISADVANTAGES-OF-BEING-A-DEVELOPER-.jpeg",
+        phone: "7-928-123-45-67",
+        email: "1alash32@mail.ru",
+        city: "Moscow",
+        position: "Full-stack JS",
+        experience: 2,
+      },
+      {
+        name: "1алаш",
+        surname: "Дудаев",
+        age: 32,
+        image:
+          "https://appdevcon.nl/wp-content/uploads/2020/03/ADVANTAGES-AND-DISADVANTAGES-OF-BEING-A-DEVELOPER-.jpeg",
+        phone: "7-928-123-45-67",
+        email: "1alash32@mail.ru",
+        city: "Moscow",
+        position: "Full-stack JS",
+        experience: 2,
+      },
+    ],
     loading: false,
     error: null,
     stack: [],
-    token: []
+    token: [],
   },
   reducers: {},
   extraReducers: (builder) => {

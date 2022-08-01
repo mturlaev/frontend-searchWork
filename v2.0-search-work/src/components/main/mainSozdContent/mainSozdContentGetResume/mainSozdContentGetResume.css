@@ -1,0 +1,61 @@
+.mainSozdContentGetResume-Main {
+    display: flex;
+    flex-wrap: wrap;
+    background: whitesmoke;
+}
+
+.mainSozdContentGetResume-OneResume {
+    width: 26%;
+    padding: 2%;
+    margin: 3%;
+    background: white;
+    border-radius: 10px;
+
+}
+
+.mainSozdContentGetResume-Position {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.mainSozdContentGetResume-NameSurname {
+    display: flex;
+    gap: 3%;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.mainSozdContentGetResume-Exp {
+    display: flex;
+    margin: auto;
+    font-size: 20px;
+}
+
+.mainSozdContentGetResume-Contacts {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.mainSozdContentGetResume-Btn {
+    display: flex;
+    justify-content: center;
+}
+
+.mainSozdContentGetResume-Btn button {
+    border: none;
+    background: #1e8fffd0;
+    color: whitesmoke;
+    border-radius: 6px;
+    transition-duration: 0.3s;
+    width: 150px;
+    height: 32px;
+}
+.mainSozdContentGetResume-Btn button:hover {
+    border: none;
+    background: rgba(1, 168, 1, 0.736);
+    color: whitesmoke;
+    border-radius: 6px;
+    transition-duration: 0.3s;
+    width: 150px;
+    height: 32px;
+}
